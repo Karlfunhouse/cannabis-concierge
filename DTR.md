@@ -1,8 +1,8 @@
 #### Goals and Expectations for the Project (What does each group member hope to get out of this project?)
-Ally- Practice with async testing.  Learning Redux.  Testing as well.
-Justin- Learning as much about Redux as possible.  More testing practice.  
-Karl- Wtf is Redux?  Testing.  Router practice.  Seeing how React & Redux work together.  Be able to at least submit to demo comp.
-Léah- More testing in all capacities.  How React & Redux work together.  Having a project to put on resume.
+Ally- Practice with async testing.  Learning MobX.  Testing as well.
+Justin- Learning as much about MobX as possible.  More testing practice.  
+Karl- Wtf is MobX?  Testing.  Router practice.  Seeing how React & MobX work together.  Be able to at least submit to demo comp.
+Léah- More testing in all capacities.  How React & MobX work together.  Having a project to put on resume.
 
 #### What do we want to achieve as a team? How will we know that we're successful?:
 Ally- Good collaboration & Git workflow.  Nice to have a PR template & having group review of PRs before merge. Communicate when PRs go up for review.  Have group be in contact about what's going up and comment on complex code for documentation.
