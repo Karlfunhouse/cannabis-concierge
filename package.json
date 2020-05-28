@@ -140,6 +140,12 @@
     ]
   },
   "plugins": [
-    "transform-decorators-legacy"
-  ]
+    "transform-decorators-legacy",
+    ["@babel/plugin-proposal-decorators", { "legacy": true }],
+    ["@babel/plugin-proposal-class-properties", { "loose": true }]
+  ],
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.10.1",
+    "@babel/plugin-proposal-decorators": "^7.10.1"
+  }
 }
