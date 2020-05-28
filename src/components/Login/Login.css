@@ -1,1 +1,65 @@
-a
+main {
+  align-items: center;
+  background-image: url('/assets/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+
+form {
+  background-color: rgba(117, 117, 125, 0.4);
+  width: 60%;
+  height: 72%;
+}
+
+h2 {
+  color: white;
+  opacity: 100%;
+}
+
+h3 {
+  color: white;
+}
+
+span {
+  color: #07B35A;
+  -webkit-text-fill-color: #07B35A;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: white
+}
+
+.login-logo {
+  width: 30%;
+
+}
+
+.username-input {
+  margin-top: 2%;
+  padding: 0.5%;
+}
+
+.age-btns {
+  border: none;
+  cursor: pointer;
+  padding: 1%;
+  margin: 3% 3% 0 3%;
+  width: 20%;
+}
+
+.green-btn {
+  background-color: #07B35A;
+}
+
+.green-btn:hover {
+  background-color: #28F68B;
+}
+
+.red-btn {
+  background-color: #F00511;
+}
+
+.red-btn:hover {
+  background-color: #FC737A;
+}
