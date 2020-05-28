@@ -3,7 +3,7 @@ import { observable, action, computed, decorate } from "mobx";
 class WeedStore {
   allStrains = [];
   currentStrains = [];
-
+  @observable userInfo = '';
 }
 
 // decorate (

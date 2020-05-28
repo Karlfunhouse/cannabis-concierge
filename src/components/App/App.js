@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import './App.css';
 import { allStrainsData } from '../../apiRequest';
 import store from '../../WeedStore';
-import Login from '../Login/Login.js'
+import Login from '../Login/Login.js';
 
 function App() {
 
