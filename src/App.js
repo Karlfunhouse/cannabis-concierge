@@ -5,16 +5,14 @@ import store from './WeedStore'
 
 function App() {
 
-
-//  useEffect(() => {
-//      let fetchData = async () => {
-//        let data = await allStrainsData()
-
-//      }
-//      fetchData()
-//     }, [])
-  
-   console.log(store)
+ useEffect(() => {
+     let fetchData = async () => {
+       let data = await allStrainsData()
+        store.allStrains = data
+        console.log(store.allStrains);
+     }
+     fetchData()
+    }, [])
 
   return (
     <div className="App">
