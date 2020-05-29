@@ -2,7 +2,6 @@ import { observable, action, computed, decorate } from "mobx";
 import { allStrainsData } from "./apiRequest";
 import { createContext } from 'react'
 
-
 export default class WeedStore {
   allStrains = [];
   currentStrains = [];
