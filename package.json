@@ -40,6 +40,7 @@
     "mini-css-extract-plugin": "0.9.0",
     "mobx": "^5.15.4",
     "mobx-react": "^6.2.2",
+    "mobx-react-lite": "^2.0.7",
     "optimize-css-assets-webpack-plugin": "5.0.3",
     "pnp-webpack-plugin": "1.6.4",
     "postcss-flexbugs-fixes": "4.1.0",
@@ -141,8 +142,18 @@
   },
   "plugins": [
     "transform-decorators-legacy",
-    ["@babel/plugin-proposal-decorators", { "legacy": true }],
-    ["@babel/plugin-proposal-class-properties", { "loose": true }]
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
+    ],
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "loose": true
+      }
+    ]
   ],
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.10.1",

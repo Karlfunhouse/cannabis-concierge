@@ -1,19 +1,31 @@
 import { observable, action, computed, decorate } from "mobx";
+import { allStrainsData } from "./apiRequest";
+import { createContext } from 'react'
 
-class WeedStore {
+
+export default class WeedStore {
   allStrains = [];
   currentStrains = [];
-  @observable userInfo = '';
+  userInfo = '';
+
+  fetchData = async () => {
+    let data = await allStrainsData();
+    this.allStrains = data;
+    console.log(this.allStrains);
+  }
 }
 
-// decorate (
-//    WeedStore, {
-//      allStrains: observable,
-//      currentStrains: observable,
-//      // fetchStrains: action,
-//      // setStrainsData: computed,
-//    }
-// )
 
-const store = new WeedStore();
-export default store;
+decorate (
+   WeedStore, {
+    allStrains: observable,
+    currentStrains: observable,
+    userInfo: observable,
+    fetchData: action
+     // fetchStrains: action,
+     // setStrainsData: computed,
+   }
+)
+
+export const WeedStoreContext = createContext(new WeedStore())
+
