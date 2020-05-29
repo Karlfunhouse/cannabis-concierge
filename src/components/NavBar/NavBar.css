@@ -1,0 +1,63 @@
+header {
+    background-color: #75757D;
+    display: flex;
+    justify-content: space-between;
+    padding: 1%;
+}
+
+h2 {}
+
+h3 {}
+
+.logo-area {
+    display: flex;
+
+}
+
+.logo-words {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo-icon {
+    width: 15%;
+
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 3%;
+    width: 43%;
+    margin: 3% 5% 0 3%;
+    border-radius: 10px;
+}
+
+.favorite-button {
+    background-color: #07B35A;
+}
+
+.favorite-button:hover {
+    background-color: #28F68B;
+}
+
+.logout-button {
+    background-color: #F00511;
+}
+
+.logout-button:hover {
+    background-color: #FC737A;
+}
