@@ -24,7 +24,7 @@ const App = observer(() => {
         <Route path='/home' component= { () => (
           <div className='home-page'>
             <NavBar />
-            <CardsContainer />
+            {/* <CardsContainer /> */}
           </div>
         ) } />
         <Route path='/' component= { () => <Login /> } />
