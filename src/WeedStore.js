@@ -21,8 +21,6 @@ decorate (
     currentStrains: observable,
     userInfo: observable,
     fetchData: action
-     // fetchStrains: action,
-     // setStrainsData: computed,
    }
 )
 
