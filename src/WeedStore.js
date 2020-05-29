@@ -15,7 +15,6 @@ export default class WeedStore {
   }
 }
 
-
 decorate (
    WeedStore, {
     allStrains: observable,
@@ -28,4 +27,3 @@ decorate (
 )
 
 export const WeedStoreContext = createContext(new WeedStore())
-

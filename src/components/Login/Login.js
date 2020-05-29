@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import './Login.css';
 import { WeedStoreContext } from "../../WeedStore";
+import { Link } from 'react-router-dom';
 
 // import { useWeedStore } from '../../hooks.js';
 
@@ -10,7 +11,6 @@ const Login = () => {
   const changeHandler = (e) => {
     weedStore.userInfo = e.target.value;
     console.log(weedStore.userInfo);
-    
   }
 
   return (
@@ -22,7 +22,9 @@ const Login = () => {
         <h2><span>Cannabis</span> Concierge is for adults</h2>
         <input placeholder='username' className='username-input' onChange={changeHandler}></input>
         <div className="login-btn-holder">
-          <button type='button' className='age-btns green-btn'>I'm 21+</button>
+          <Link to='/home'>
+            <button type='button' className='age-btns green-btn'>I'm 21+</button>
+          </Link>
           <button type='button' className='age-btns red-btn'>I'm not 21 yet</button>
         </div>
       </form>

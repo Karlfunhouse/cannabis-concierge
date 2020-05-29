@@ -1,23 +1,37 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
-import { WeedStoreContext } from '../../WeedStore';
+import { allStrainsData } from '../../apiRequest';
+import store from '../../WeedStore';
 import Login from '../Login/Login.js';
-import { observer } from "mobx-react-lite";
+import { Switch, Route } from 'react-router-dom';
+import NavBar from '../NavBar/NavBar.js';
+import CardsContainer from '../CardsContainer/CardsContainer.js';
 
-
-const App = observer(() => {
-  const weedStore = useContext(WeedStoreContext)
+function App() {
 
   useEffect(() => {
-    weedStore.fetchData()
-    console.log(weedStore.userInfo);
-    }, [weedStore])
+    let fetchData = async () => {
+      let data = await allStrainsData()
+        store.allStrains = data
+        console.log(store.allStrains);
+      }
+      fetchData()
+    }, [])
 
   return (
     <div className="App">
-      <Login />
+      <Switch>
+        <Route path='/home' component= { () => (
+          <div className='home-page'>
+            <NavBar />
+            <CardsContainer />
+          </div>
+        ) } />
+        <Route path='/' component= { () => <Login /> } />
+      </Switch>
+
     </div>
   );
-})
+}
 
 export default App;
