@@ -1,25 +1,23 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import './App.css';
-import { allStrainsData } from '../../apiRequest';
-import store from '../../WeedStore';
+import { WeedStoreContext } from '../../WeedStore';
 import Login from '../Login/Login.js';
+import { observer } from "mobx-react-lite";
 
-function App() {
+
+const App = observer(() => {
+  const weedStore = useContext(WeedStoreContext)
 
   useEffect(() => {
-    let fetchData = async () => {
-      let data = await allStrainsData()
-        store.allStrains = data
-        console.log(store.allStrains);
-      }
-      fetchData()
-    }, [])
+    weedStore.fetchData()
+    console.log(weedStore.userInfo);
+    }, [weedStore])
 
   return (
     <div className="App">
       <Login />
     </div>
   );
-}
+})
 
 export default App;
