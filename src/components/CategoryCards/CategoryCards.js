@@ -23,4 +23,3 @@ const CategoryCards = () => {
 }
 
 export default CategoryCards;
-
