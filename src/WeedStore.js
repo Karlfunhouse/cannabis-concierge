@@ -7,7 +7,8 @@ export default class WeedStore {
   allStrains = [];
   currentStrains = [];
   userInfo = '';
-  filteredStrains = []
+  filteredStrains = [];
+  homePageCategories = ['Activity', 'Mood', 'Medicinal', 'Quiz'];
 
   fetchData = async () => {
     let data = await allStrainsData();
@@ -27,7 +28,7 @@ export default class WeedStore {
 
 
 decorate (
-   WeedStore, {
+  WeedStore, {
     allStrains: observable,
     currentStrains: observable,
     userInfo: observable,

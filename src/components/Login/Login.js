@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import './Login.css';
 import { WeedStoreContext } from "../../WeedStore";
 import { Link } from 'react-router-dom';
@@ -7,10 +7,16 @@ import { Link } from 'react-router-dom';
 
 const Login = () => {
   const weedStore = useContext(WeedStoreContext);
-
+  const [errorMsg, addError] = useState('')
+  const [alertClass, addAlertClass] = useState('hide')
   const changeHandler = (e) => {
     weedStore.userInfo = e.target.value;
     console.log(weedStore.userInfo);
+  }
+
+  const errorMessage = (e) => {
+    e.preventDefault();
+    addError('Please enter your username')
   }
 
   return (
@@ -22,10 +28,12 @@ const Login = () => {
         <h2><span>Cannabis</span> Concierge is for adults</h2>
         <input placeholder='username' className='username-input' onChange={changeHandler}></input>
         <div className="login-btn-holder">
-          <Link to='/home'>
+          <Link onClick={ (e) => {!weedStore.userInfo && errorMessage(e)} } to='/home'>
             <button type='button' className='age-btns green-btn'>I'm 21+</button>
           </Link>
-          <button type='button' className='age-btns red-btn'>I'm not 21 yet</button>
+          <button onClick={() =>  addAlertClass(null)} type='button' className='age-btns red-btn'>I'm not 21 yet</button>
+          <p className="error-msg">{errorMsg}</p>
+          <div className={alertClass}><h3 className="age-alert">Come back and see us when you're 21!</h3></div>
         </div>
       </form>
     </main>

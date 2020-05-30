@@ -1,0 +1,27 @@
+.category-title {
+  color: black;
+}
+
+.category-button {
+  /* width: 500px; */
+  height: 150px;
+  background-color: #F4F4F6;
+  margin: 50px;
+  padding: 50px;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 2px 2px #00000022;
+}
+
+.category-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+a {
+  text-decoration: none;
+  width: 40%;
+  min-width: 375px;
+}
