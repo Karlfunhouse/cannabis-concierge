@@ -7,9 +7,8 @@ import { Switch, Route } from 'react-router-dom';
 import NavBar from '../NavBar/NavBar.js';
 import CardsContainer from '../CardsContainer/CardsContainer.js';
 import { WeedStoreContext } from '../../WeedStore';
-import { observer } from 'mobx-react-lite';
 
-const App = observer(() => {
+const App = () => {
 
   const weedStore = useContext(WeedStoreContext);
 
@@ -24,13 +23,13 @@ const App = observer(() => {
         <Route path='/home' component= { () => (
           <div className='home-page'>
             <NavBar />
-            {/* <CardsContainer /> */}
+            <CardsContainer />
           </div>
         ) } />
         <Route path='/' component= { () => <Login /> } />
       </Switch>
     </div>
   );
-})
+}
 
 export default App;
