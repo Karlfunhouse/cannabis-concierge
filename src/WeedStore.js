@@ -3,16 +3,28 @@ import { allStrainsData } from "./apiRequest";
 import { createContext } from 'react'
 
 export default class WeedStore {
+  allData = [];
   allStrains = [];
   currentStrains = [];
   userInfo = '';
+  filteredStrains = []
 
   fetchData = async () => {
     let data = await allStrainsData();
-    this.allStrains = data;
-    console.log(this.allStrains);
+    this.allData = data;
+    console.log(this.allData);
+    this.setNewData()
+  }
+
+  setNewData = () => {
+    let keys = Object.keys(this.allData)
+    let strainsArray = keys.map(key => {
+      return {name: key, ...this.allData[key]}
+    })
+    this.allStrains = strainsArray
   }
 }
+
 
 decorate (
    WeedStore, {
