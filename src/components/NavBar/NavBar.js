@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./NavBar.css";
-// import store from "../../WeedStore";
+import { WeedStoreContext } from "../../WeedStore";
+
+
+
 const NavBar = () => {
+  const weedStore = useContext(WeedStoreContext);
+
   return (
     <header>
       <div className="logo-area">
@@ -20,7 +25,7 @@ const NavBar = () => {
         </div>
       </div>
       <div className="user-info">
-        <h3>Welcome, Username</h3>
+        <h3>Welcome, {weedStore.userInfo}</h3>
         <div className="menu-buttons">
           <button type="button" className="button favorite-button">
             Favorites - 0
