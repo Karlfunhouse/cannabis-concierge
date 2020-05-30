@@ -8,6 +8,31 @@ main {
   justify-content: center;
 }
 
+.error-msg {
+  color: #F00511;
+  width: 30%;
+  font-weight: bold;
+  padding: 10px;
+  margin: 20px auto;
+}
+
+.hide {
+  display: none;
+}
+
+.age-alert {
+  width: 30%;
+  left: 35%;
+  position: absolute;
+  top: 300px;
+  background-color: white;
+  height: 150px;
+  color: black;
+  padding-top: 50px;
+}
+
+
+
 form {
   background-color: rgba(117, 117, 125, 0.4);
   width: 60%;
