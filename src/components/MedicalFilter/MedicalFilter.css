@@ -1,23 +1,21 @@
 .filter-title {
-  /* width: 20%;
-  min-width: 200px; */
-  margin: 20px;
-  text-align: center;
   color: #07B35A;
   font-weight: bold;
+  margin: 20px;
+  text-align: center;
 }
 
 .selection-menu {
   background-color: #F4F4F6;
-  padding: 40px;
+  border-radius: 30px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   height: 200px;
-  width: 60%;
-  text-align: left;
   margin: 0 auto;
-  border-radius: 30px;
+  padding: 40px 40px 40px 110px;
+  text-align: left;
+  width: 60%;
 }
 
 .selection-menu input {
@@ -27,8 +25,3 @@
 .med-input {
   margin-top: 5px;
 }
-
-
-/* .filter-item {
-  width:  30%;
-} */
