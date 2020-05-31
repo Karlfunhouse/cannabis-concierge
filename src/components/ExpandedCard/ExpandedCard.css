@@ -79,6 +79,7 @@
 .back-button {
   background-color: white;
   border-radius: 15px;
+  cursor: pointer;
   padding: .1em;
   width: 100px;
   height: 30px;
@@ -87,12 +88,12 @@
 .favorite-strain-button {
   background-color: #f4f4f6;
   border-radius: 30px;
+  cursor: pointer;
   padding: .1em;
   width: 200px;
   height: 55px;
 }
 
 .favorite-img {
-  height:75%;
-  /* width:100%; */
+  height: 75%;
 }
