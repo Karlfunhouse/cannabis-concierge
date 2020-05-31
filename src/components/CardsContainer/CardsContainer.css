@@ -1,101 +1,94 @@
 .CardsContainer {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    flex-wrap: wrap;
-
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .weed-card {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    background-color:#f4f4f6;
-    border: 2px solid #75757D;
-    border-radius: 10px;
-    width: 23%;
-    margin: 1%;
-    padding: 1%;
-    overflow-wrap: break-word;
+  background-color: #f4f4f6;
+  border: 2px solid #75757D;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1%;
+  overflow-wrap: break-word;
+  padding: 1%;
+  width: 23%;
 }
 
 .card-top {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .icon {
-    width: 75px;
+  width: 75px;
 }
 
 .card-name-race {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    width: 200px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 200px;
 }
 
 .favorite-button-icon {
-    background-color: none;
-    width: 60px;
-    height: 70px;
+  background-color: none;
+  height: 70px;
+  width: 60px;
 }
 
-
 .card-name {
-    font-size: 1.5em;
-    
+  font-size: 1.5em;
 }
 
 .card-race {
-    margin: 5%;
-    border: 1px solid #75757D;
-    width: 120%;
-    padding: 5%;
-    
+  border: 1px solid #75757D;
+  margin: 5%;
+  padding: 5%;
+  width: 120%;
+}
+
+.indica,
+.sativa,
+.hybrid {
+  border: none;
+  border-radius: 15px;
+  margin: 5%;
+  padding: 3% 10%;
+  width: auto;
 }
 
 .indica {
-    background-color: #43E8F2;
-    margin: 5%;
-    border: none;
-    border-radius: 15px;
-    width: auto;
-    padding: 3% 10%;
+  background-color: #43E8F2;
 }
 
 .sativa {
-    background-color: #F2AC43;
-    margin: 5%;
-    border: none;
-    border-radius: 15px;
-    width: auto;
-    padding: 3% 10%;
+  background-color: #F2AC43;
 }
 
 .hybrid {
-    background-color: #A543F2;
-    margin: 5%;
-    border: none;
-    border-radius: 15px;
-    width: auto;
-    padding: 3% 10%;
+  background-color: #A543F2;
 }
+
 .card-bottom {
-    font-size: .7em;
+  font-size: .7em;
+  padding-top: 3%;
 }
 
 .effects {
-    display: flex;
-    align-items: center;
-    margin: 2%;
+  align-items: center;
+  display: flex;
+  margin: 2%;
 }
 
 .effect-indicator {
-    width: 20px;
-    height: 20px;
-    margin: 0 5px 3px 0;
+  height: 20px;
+  margin: 0 5px 3px 0;
+  width: 20px;
 }

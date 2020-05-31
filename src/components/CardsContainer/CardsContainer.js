@@ -22,24 +22,24 @@ const CardsContainer = observer( () => {
             </div>
           </div>
           <img className="favorite-button-icon"
-            src={strain.favorite ? '/assets/favorite-yes.png' : '/assets/favorite-yep.png'} 
+            src={strain.favorite ? '/assets/favorite-yes.png' : '/assets/favorite-yep.png'}
             alt={strain.favorite ? 'favorited strain image' : 'unfavorited strain image'}
           />
         </div>
         <div className="card-bottom">
           <h4 className="effects"><img src="/assets/plus.png" alt="plus" className="effect-indicator"/> {posEffects}</h4>
           <h4 className="effects"><img src="/assets/minus.png" alt="minus" className="effect-indicator"/>{strain.effects.negative.length > 0 ? negEffects : 'None'}</h4>
-          <h4 className="effects"><img src="/assets/taste.png" alt="taste" className="effect-indicator"/>Flavors:{strain.flavors.join(', ')}</h4>
+          <h4 className="effects"><img src="/assets/taste.png" alt="taste" className="effect-indicator"/>Flavors: {strain.flavors.join(', ')}</h4>
         </div>
       </div>
     )
   })
 
-  // const showCards = 
+  // const showCards =
     // weedStore.allStrains.map(strain => )
   //  <div>{weedStore.allStrains[0]}</div>
-  
-  
+
+
   return (
     <section className="CardsContainer">
       {displayCards}
