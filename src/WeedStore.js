@@ -26,6 +26,9 @@ export default class WeedStore {
       return {name: key, ...this.allData[key], favorite: false}
     })
     this.allStrains = strainsArray
+    this.currentStrains = strainsArray
+    console.log(this.allStrains);
+    
   }
 }
 

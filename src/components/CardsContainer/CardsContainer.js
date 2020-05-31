@@ -4,7 +4,7 @@ import { WeedStoreContext } from '../../WeedStore';
 import { observer } from 'mobx-react-lite';
 
 
-const CardsContainer = observer(() => {
+const CardsContainer = observer( () => {
   const weedStore = useContext(WeedStoreContext)
   const weedSample = weedStore.allStrains.slice(0, 12)
   const displayCards = weedSample.map(strain => {
@@ -35,12 +35,17 @@ const CardsContainer = observer(() => {
     )
   })
 
+  // const showCards = 
+    // weedStore.allStrains.map(strain => )
+  //  <div>{weedStore.allStrains[0]}</div>
+  
+  
   return (
     <section className="CardsContainer">
       {displayCards}
       {console.log(weedStore.allStrains[0])}
     </section>
-  )
+  );
 })
 
 export default CardsContainer

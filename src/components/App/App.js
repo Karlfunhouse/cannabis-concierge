@@ -7,6 +7,7 @@ import CategoryCards from '../CategoryCards/CategoryCards.js';
 import CardsContainer from '../CardsContainer/CardsContainer.js';
 import ExpandedCard from '../ExpandedCard/ExpandedCard';
 import { WeedStoreContext } from '../../WeedStore';
+import MedicalFilter from '../MedicalFilter/MedicalFilter';
 
 const App = () => {
 
@@ -33,6 +34,7 @@ const App = () => {
           component={() => (
             <div>
               <NavBar />
+              <MedicalFilter />
               <CardsContainer />
               <ExpandedCard />
             </div>
