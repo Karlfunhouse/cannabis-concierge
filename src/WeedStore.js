@@ -9,6 +9,7 @@ export default class WeedStore {
   userInfo = '';
   filteredStrains = [];
   homePageCategories = ['Activity', 'Mood', 'Medicinal', 'Quiz'];
+  medicalEffects = ['Depression', 'Insomnia', 'Pain', 'Stress', 'Lack of Appetite', 'Nausea', 'Headache', 'Fatigue', 'Headaches', 'Eye Pressure', 'Inflammation', 'Spasticity', 'Siezures', 'Muscle Spasms'];
 
   fetchData = async () => {
     let data = await allStrainsData();
@@ -23,6 +24,9 @@ export default class WeedStore {
       return {name: key, ...this.allData[key]}
     })
     this.allStrains = strainsArray
+    this.currentStrains = strainsArray
+    console.log(this.allStrains);
+    
   }
 }
 

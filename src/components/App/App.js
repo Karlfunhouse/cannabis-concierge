@@ -6,6 +6,7 @@ import NavBar from '../NavBar/NavBar.js';
 import CategoryCards from '../CategoryCards/CategoryCards.js';
 import CardsContainer from '../CardsContainer/CardsContainer.js';
 import { WeedStoreContext } from '../../WeedStore';
+import MedicalFilter from '../MedicalFilter/MedicalFilter';
 
 const App = () => {
 
@@ -14,6 +15,8 @@ const App = () => {
   useEffect(() => {
     weedStore.fetchData();
     console.log(weedStore.userInfo);
+    console.log(weedStore.allStrains);
+    
   }, [weedStore])
 
   return (
@@ -32,6 +35,7 @@ const App = () => {
           component={() => (
             <div>
               <NavBar />
+              <MedicalFilter />
               <CardsContainer />
             </div>
           )}

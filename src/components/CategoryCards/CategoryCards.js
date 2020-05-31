@@ -8,8 +8,8 @@ import { Link } from "react-router-dom";
 const CategoryCards = () => {
   const weedStore = useContext(WeedStoreContext);
   const displayCards = weedStore.homePageCategories.map((category) => (
-    <Link to={`/${category.toLowerCase()}`}>
-      <div className="category-button">
+    <Link key={category} to={`${category.toLowerCase()}`}>
+      <div key={category} className="category-button">
         <h2 className="category-title">{category}</h2>
       </div>
     </Link>
