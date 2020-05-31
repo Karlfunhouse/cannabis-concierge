@@ -1,0 +1,98 @@
+.expanded-strain-container {
+  height:85vh;
+  width:100%;
+  background-color: #07B35A;
+  display: flex;
+  flex-direction: row;
+  padding: 1em;
+}
+
+.strain-overview-left-box {
+  width:45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.strain-type-tag {
+  background-color: white;
+  border-radius: 15px;
+  padding: .2em .4em;
+}
+
+.cannabis-img {
+  width:80%;
+  margin: .3em;
+}
+
+.strain-details {
+  padding: 1em;
+}
+
+.strain-overview-middle-box {
+  width:45%;
+  height: 100%;
+}
+
+.description-header {
+  text-align: left;
+}
+
+.description-content {
+  text-align: left;
+  word-spacing: 3px;
+}
+
+.effects-box {
+  display: flex;
+  justify-content: space-around;
+}
+
+.strain-effect-tag {
+  background-color: white;
+  border-radius: 15px;
+  padding: .1em;
+  margin: .5em;
+  width: 100px;
+}
+
+.effect-img {
+  margin: 1em;
+  width:30%;
+}
+
+.effects-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.strain-overview-right-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 55%;
+}
+
+.back-button {
+  background-color: white;
+  border-radius: 15px;
+  padding: .1em;
+  width: 100px;
+  height: 30px;
+}
+
+.favorite-strain-button {
+  background-color: #f4f4f6;
+  border-radius: 30px;
+  padding: .1em;
+  width: 200px;
+  height: 55px;
+}
+
+.favorite-img {
+  height:75%;
+  /* width:100%; */
+}

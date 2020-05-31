@@ -1,4 +1,5 @@
 header {
+    height:15vh;
     background-color: #75757D;
     display: flex;
     justify-content: space-between;
