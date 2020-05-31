@@ -10,16 +10,28 @@ const MedicalFilter = observer(() => {
   const { type } = useParams();
   
   
-  const allFilterClickListener = (e) => {
+  const allFilterClickListener = async (e) => {
     console.log(type);
     console.log(location.pathname);
     console.log("FILTER clicked", e.target.name);
     const name = e.target.name
-    weedStore.currentStrains = weedStore.currentStrains.filter(strain => {
-     return  strain.effects.medical.includes(name); 
-    });
-    console.log(weedStore.currentStrains);
+    console.log(e.target.checked);
+    
+    if (e.target.checked) {
+      weedStore.currentStrains = weedStore.currentStrains.filter(strain => {
+        return  strain.effects.medical.includes(name); 
+      });
+    }
+    else {
+      let filterIn = weedStore.allStrains.filter(strain => strain.effects.medical.includes(name))
+      
+      weedStore.currentStrains = weedStore.currentStrains.filter((strain) => {
+        return !(strain.effects.medical.includes(name));
+      });
+      console.log(filterIn);
+    }
     console.log(weedStore.currentStrains.length);
+    console.log(weedStore.currentStrains);
     
   }
     
