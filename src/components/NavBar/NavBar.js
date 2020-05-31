@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
 import "./NavBar.css";
 import { WeedStoreContext } from "../../WeedStore";
-
-
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   const weedStore = useContext(WeedStoreContext);
@@ -30,9 +29,11 @@ const NavBar = () => {
           <button type="button" className="button favorite-button">
             Favorites - 0
           </button>
-          <button type="button" className="button logout-button">
-            Logout
-          </button>
+          <Link to='/'>
+            <button type="button" className="button logout-button">
+              Logout
+            </button>
+          </Link>
         </div>
       </div>
     </header>
