@@ -31,12 +31,11 @@ main {
   padding-top: 50px;
 }
 
-
-
 form {
   background-color: rgba(117, 117, 125, 0.4);
-  width: 60%;
   height: 72%;
+  padding-top: 4%;
+  width: 60%;
 }
 
 h2 {
