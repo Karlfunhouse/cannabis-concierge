@@ -12,14 +12,14 @@ export default class WeedStore {
 
   fetchData = async () => {
     let data = await allStrainsData();
-    this.allData = data;
+    this.allData = await data;
     console.log(this.allData);
-    this.setNewData()
+    await this.setNewData()
   }
 
-  setNewData = () => {
-    let keys = Object.keys(this.allData)
-    let strainsArray = keys.map(key => {
+  setNewData = async () => {
+    let keys = await Object.keys(this.allData)
+    let strainsArray = await keys.map(key => {
       return {name: key, ...this.allData[key]}
     })
     this.allStrains = strainsArray

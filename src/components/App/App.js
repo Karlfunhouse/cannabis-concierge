@@ -5,6 +5,7 @@ import { Switch, Route } from 'react-router-dom';
 import NavBar from '../NavBar/NavBar.js';
 import CategoryCards from '../CategoryCards/CategoryCards.js';
 import CardsContainer from '../CardsContainer/CardsContainer.js';
+import ExpandedCard from '../ExpandedCard/ExpandedCard';
 import { WeedStoreContext } from '../../WeedStore';
 
 const App = () => {
@@ -14,7 +15,7 @@ const App = () => {
   useEffect(() => {
     weedStore.fetchData();
     console.log(weedStore.userInfo);
-  }, [weedStore])
+  }, [])
 
   return (
     <div className="App">
@@ -33,6 +34,16 @@ const App = () => {
             <div>
               <NavBar />
               <CardsContainer />
+              <ExpandedCard />
+            </div>
+          )}
+        />
+        <Route
+          path="/expanded_view"
+          component={() => (
+            <div>
+              <NavBar />
+              <ExpandedCard />
             </div>
           )}
         />
