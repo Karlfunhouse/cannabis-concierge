@@ -1,5 +1,7 @@
 import React, { useContext } from 'react'
 import './CardsContainer.css'
+import '../StrainCard/StrainCard.css'
+import StrainCard from '../StrainCard/StrainCard'
 import { WeedStoreContext } from '../../WeedStore';
 import { observer } from 'mobx-react-lite';
 
@@ -39,10 +41,9 @@ const CardsContainer = observer( () => {
     // weedStore.allStrains.map(strain => )
   //  <div>{weedStore.allStrains[0]}</div>
 
-
   return (
     <section className="CardsContainer">
-      {displayCards}
+      <StrainCard />
       {console.log(weedStore.allStrains[0])}
     </section>
   );
