@@ -49,6 +49,7 @@ const App = () => {
           component={() => (
             <div>
               <NavBar />
+              <CardsContainer />
             </div>
           )}
         />
