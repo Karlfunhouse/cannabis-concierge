@@ -22,7 +22,7 @@
   justify-content: space-around;
 }
 
-a {
+.category-cards a {
   min-width: 375px;
   text-decoration: none;
   width: 40%;
