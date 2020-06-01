@@ -1,5 +1,5 @@
 header {
-    height:15vh;
+    min-height: 15vh;
     background-color: #75757D;
     display: flex;
     justify-content: space-between;
@@ -16,7 +16,8 @@ h3 {}
     justify-content: center;
 }
 .logo-icon {
-    width: 15%;
+    height: 105px;
+    width: 90px;
 }
 .user-info {
     display: flex;
@@ -32,9 +33,9 @@ h3 {}
     border: none;
     cursor: pointer;
     padding: 3%;
-    width: 43%;
+    width: 120px;
     margin: 3% 5% 0 3%;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 .favorite-button {
     background-color: #07B35A;
