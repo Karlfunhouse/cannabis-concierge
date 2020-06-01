@@ -1,59 +1,59 @@
 header {
-    min-height:15vh;
-    background-color: #75757D;
-    display: flex;
-    justify-content: space-between;
-    padding: 1%;
+  background-color: #75757D;
+  display: flex;
+  justify-content: space-between;
+  min-height: 15vh;
+  padding: 1%;
 }
 
 .logo-area {
-    display: flex;
+  display: flex;
 }
 
 .logo-words {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .logo-icon {
-    width: 90px;
-    height: 105px;
+  height: 105px;
+  width: 90px;
 }
 
 .user-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .menu-buttons {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .button {
-    color: white;
-    border: none;
-    cursor: pointer;
-    padding: 3%;
-    width: 120px;
-    margin: 3% 5% 0 3%;
-    border-radius: 15px;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  margin: 3% 5% 0 3%;
+  padding: 3%;
+  width: 120px;
 }
 
 .favorite-button {
-    background-color: #07B35A;
+  background-color: #07B35A;
 }
 
 .favorite-button:hover {
-    background-color: #28F68B;
+  background-color: #28F68B;
 }
 
 .logout-button {
-    background-color: #F00511;
+  background-color: #F00511;
 }
 
 .logout-button:hover {
-    background-color: #FA0F1B;
+  background-color: #FA0F1B;
 }
