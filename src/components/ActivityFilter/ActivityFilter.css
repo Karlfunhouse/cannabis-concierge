@@ -1,0 +1,62 @@
+
+.netflix:hover,
+.yoga:hover,
+.nature:hover,
+.social:hover {
+    cursor: pointer;
+    opacity: 100%;
+    border: 2px solid #07B35A;
+}
+
+.netflix {
+    background: url('/assets/netflix-button.jpeg') no-repeat;
+    border: 2px solid #454955;
+    border-radius: 15px;
+    width: 200px;
+    height: 133px;
+    margin: 1%;
+    opacity: 80%;
+}
+
+.yoga {
+    background: url('/assets/yoga-button.jpg') no-repeat;
+    border: 2px solid #454955;
+    border-radius: 15px;
+    width: 200px;
+    height: 133px;
+    margin: 1%;
+    opacity: 80%;
+}
+
+.nature {
+    background: url('/assets/nature-button.jpg') no-repeat;
+    border: 2px solid #454955;
+    border-radius: 15px;
+    width: 200px;
+    height: 133px;
+    margin: 1%;
+    opacity: 80%;
+}
+
+.social {
+    background: url('/assets/social-button.jpeg') no-repeat;
+    border: 2px solid #454955;
+    border-radius: 15px;
+    width: 200px;
+    height: 133px;
+    margin: 1%;
+    opacity: 80%;
+}
+
+.activity-name {
+    /* background-color: #75757D; */
+    padding: 2%;
+    border-radius: 15px;
+    font-size: 1.7em;
+    /* opacity: 50%; */
+    /* color: white; */
+}
+
+h2 {
+    color: black;
+}
