@@ -9,11 +9,19 @@ export default class WeedStore {
   userInfo = '';
   filteredStrains = [];
   homePageCategories = ['Activity', 'Mood', 'Medicinal', 'Quiz'];
-  activities = ['netflix', 'yogaMeditation', 'nature', 'socialMusic'];
-  netflix = ['Aroused', 'Giggly', 'React', 'Happy', 'Hungry', 'Tingly'];
-  yogaMeditation = ['Relaxed', 'Uplifted', 'Euphoric', 'Happy', 'Creative', 'Focused'];
-  nature = ['Relaxed', 'Happy', 'Energetic', 'Uplifted', 'Giggly', 'Focused'];
-  socialMusic = ['Giggly', 'Tingly', 'Uplifted', 'Energetic', 'Talkative', 'Creative', 'Aroused'];
+  activities = [
+    {title: 'Netflix & Chill',
+    css: "netflix",
+    effects: ['Aroused', 'Giggly', 'React', 'Happy', 'Hungry', 'Tingly']}, 
+    {title: 'Yoga & Meditation',
+    css: 'yoga',
+    effects: ['Relaxed', 'Uplifted', 'Euphoric', 'Happy', 'Creative', 'Focused']},
+    {title: 'Nature',
+    css: 'nature',
+    effects: ['Relaxed', 'Happy', 'Energetic', 'Uplifted', 'Giggly', 'Focused']},
+    {title: 'Social / Music',
+    css: 'social',
+    effects: ['Giggly', 'Tingly', 'Uplifted', 'Energetic', 'Talkative', 'Creative', 'Aroused']}]
   medicinal = ['Depression', 'Insomnia', 'Pain', 'Stress', 'Lack of Appetite', 'Nausea', 'Headache', 'Fatigue', 'Headaches', 'Eye Pressure', 'Inflammation', 'Spasticity', 'Seizures', 'Muscle Spasms'];
   mood = ['Relaxed', 'Hungry', 'Euphoric', 'Happy', 'Energetic', 'Talkative', 'Uplifted', 'Tingly', 'Sleepy', 'Focused', 'Giggly', 'Aroused'];
   negativeEffects = ['Dizzy', 'Dry Mouth', 'Paranoid', 'Dry Eyes', 'Anxious'];
