@@ -7,7 +7,9 @@ export default class WeedStore {
   allStrains = [];
   currentStrains = [];
   userInfo = '';
+  filterSelectors = [];
   filteredStrains = [];
+  selectorStatus = {};
   homePageCategories = ['Activity', 'Mood', 'Medicinal', 'Quiz'];
   medicinal = ['Depression', 'Insomnia', 'Pain', 'Stress', 'Lack of Appetite', 'Nausea', 'Headache', 'Fatigue', 'Headaches', 'Eye Pressure', 'Inflammation', 'Spasticity', 'Seizures', 'Muscle Spasms'];
   mood = ['Relaxed', 'Hungry', 'Euphoric', 'Happy', 'Energetic', 'Talkative', 'Uplifted', 'Tingly', 'Sleepy', 'Focused', 'Giggly', 'Aroused'];
@@ -26,18 +28,55 @@ export default class WeedStore {
     })
     this.allStrains = strainsArray
     this.currentStrains = strainsArray
-    // console.log(this.allStrains);
-    
+  }
+
+  resetCurrentStrains = () => {
+    this.currentStrains = this.allStrains;
+  }
+
+  getFilteredStrains = (locationPath) => {
+    let filtered = this.allStrains.filter((strain) => {
+        return this.filterSelectors.every((effect) => {
+          if (locationPath === "medicinal") {
+            return strain.effects.medical.indexOf(effect) !== -1;
+          }
+          if (locationPath === "mood") {
+            return strain.effects.positive.indexOf(effect) !== -1;
+          }
+        });
+      })
+      this.currentStrains = filtered;
+    }
+
+  getSelectorStatus = (locationPath) => {
+    let test = [`...this.${locationPath}`].reduce((allItems, item) => {
+      allItems[item] = false
+      return allItems
+    }, {});
+    this.selectorStatus = test;
+  }
+
+  addDeseriredEffect = (effect) => {
+    this.filterSelectors.push(effect)
+  }
+
+  resetDesiredEffects = () => {
+    this.filterSelectors = []
   }
 }
-
 
 decorate (
   WeedStore, {
     allStrains: observable,
     currentStrains: observable,
     userInfo: observable,
-    fetchData: action
+    filterSelectors: observable,
+    getSelectorStatus: action,
+    fetchData: action,
+    resetDesiredEffects: action,
+    resetCurrentStrains: action,
+    getFilteredStrains: action,
+    addDeseriredEffect: action
    }
 )
 
