@@ -8,6 +8,7 @@ import CardsContainer from '../CardsContainer/CardsContainer.js';
 import ExpandedCard from '../ExpandedCard/ExpandedCard';
 import { WeedStoreContext } from '../../WeedStore';
 import MedicalFilter from '../MedicalFilter/MedicalFilter';
+import ActivityFilter from '../ActivityFilter/ActivityFilter';
 
 const App = () => {
 
@@ -62,6 +63,7 @@ const App = () => {
           component={() => (
             <div>
               <NavBar />
+              <ActivityFilter />
               <CardsContainer />
             </div>
           )}
