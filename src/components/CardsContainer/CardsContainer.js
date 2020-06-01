@@ -3,7 +3,6 @@ import './CardsContainer.css'
 import { WeedStoreContext } from '../../WeedStore';
 import { observer } from 'mobx-react-lite';
 
-
 const CardsContainer = observer( () => {
   const weedStore = useContext(WeedStoreContext)
   const weedSample = weedStore.allStrains.slice(0, 12)
@@ -22,7 +21,7 @@ const CardsContainer = observer( () => {
             </div>
           </div>
           <img className="favorite-button-icon"
-            src={strain.favorite ? '/assets/favorite-yes.png' : '/assets/favorite-yep.png'} 
+            src={strain.favorite ? '/assets/favorite-yes.png' : '/assets/favorite-yep.png'}
             alt={strain.favorite ? 'favorited strain image' : 'unfavorited strain image'}
           />
         </div>
@@ -35,11 +34,6 @@ const CardsContainer = observer( () => {
     )
   })
 
-  // const showCards = 
-    // weedStore.allStrains.map(strain => )
-  //  <div>{weedStore.allStrains[0]}</div>
-  
-  
   return (
     <section className="CardsContainer">
       {displayCards}
