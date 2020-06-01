@@ -1,17 +1,17 @@
 .expanded-strain-container {
-  height:85vh;
-  width:100%;
   background-color: #07B35A;
   display: flex;
   flex-direction: row;
+  height: 85vh;
   padding: 1em;
+  width:100%;
 }
 
 .strain-overview-left-box {
-  width:45%;
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  width: 45%;
 }
 
 .strain-type-tag {
@@ -21,8 +21,8 @@
 }
 
 .cannabis-img {
-  width:80%;
   margin: .3em;
+  width:80%;
 }
 
 .strain-details {
@@ -30,8 +30,8 @@
 }
 
 .strain-overview-middle-box {
-  width:45%;
   height: 100%;
+  width: 45%;
 }
 
 .description-header {
@@ -62,36 +62,36 @@
 }
 
 .effects-column {
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 
 .strain-overview-right-box {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
   height: 55%;
+  justify-content: space-between;
 }
 
 .back-button {
   background-color: white;
   border-radius: 15px;
   cursor: pointer;
+  height: 30px;
   padding: .1em;
   width: 100px;
-  height: 30px;
 }
 
 .favorite-strain-button {
   background-color: #f4f4f6;
   border-radius: 30px;
   cursor: pointer;
+  height: 55px;
   padding: .1em;
   width: 200px;
-  height: 55px;
 }
 
 .favorite-img {
