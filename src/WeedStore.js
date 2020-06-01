@@ -7,7 +7,6 @@ export default class WeedStore {
   allStrains = [];
   currentStrains = [];
   userInfo = '';
-  filteredStrains = [];
   homePageCategories = ['Activity', 'Mood', 'Medicinal', 'Quiz'];
   medicinal = ['Depression', 'Insomnia', 'Pain', 'Stress', 'Lack of Appetite', 'Nausea', 'Headache', 'Fatigue', 'Headaches', 'Eye Pressure', 'Inflammation', 'Spasticity', 'Seizures', 'Muscle Spasms'];
   mood = ['Relaxed', 'Hungry', 'Euphoric', 'Happy', 'Energetic', 'Talkative', 'Uplifted', 'Tingly', 'Sleepy', 'Focused', 'Giggly', 'Aroused'];
@@ -27,7 +26,10 @@ export default class WeedStore {
     this.allStrains = strainsArray
     this.currentStrains = strainsArray
     // console.log(this.allStrains);
-    
+  }
+
+  updateUserInfo = (userValue) => {
+    this.userInfo = userValue;
   }
 }
 
@@ -37,7 +39,8 @@ decorate (
     allStrains: observable,
     currentStrains: observable,
     userInfo: observable,
-    fetchData: action
+    fetchData: action,
+    updateUserInfo : action
    }
 )
 

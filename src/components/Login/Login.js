@@ -8,7 +8,7 @@ const Login = () => {
   const [errorMsg, addError] = useState('')
   const [alertClass, addAlertClass] = useState('hide')
   const changeHandler = (e) => {
-    weedStore.userInfo = e.target.value;
+    weedStore.updateUserInfo(e.target.value);
     console.log(weedStore.userInfo);
   }
 
