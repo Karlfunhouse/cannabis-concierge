@@ -52,6 +52,8 @@ header {
 
 .logout-button {
   background-color: #F00511;
+  height: 75%;
+  margin-top: 6%;
 }
 
 .logout-button:hover {

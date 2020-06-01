@@ -39,6 +39,7 @@
 
 .favorite-button-icon {
   background-color: none;
+  cursor: pointer;
   height: 70px;
   width: 60px;
 }
