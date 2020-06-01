@@ -1,18 +1,16 @@
-import React, { useContext } from 'react'
-import './CardsContainer.css'
-import { WeedStoreContext } from '../../WeedStore';
-import { observer } from 'mobx-react-lite';
+import React, { useContext } from "react";
+import "./StrainCards.css";
+import { WeedStoreContext } from "../../WeedStore";
+import { observer } from "mobx-react-lite";
 
-
-const CardsContainer = observer( () => {
-  const weedStore = useContext(WeedStoreContext)
-  const weedSample = weedStore.allStrains.slice(0, 12)
-  const displayCards = weedSample.map(strain => {
+const StrainCards = observer(() => {
+  const weedStore = useContext(WeedStoreContext);
+  const displayCards = weedStore.currentStrains.map(strain => {
     const posEffects = strain.effects.positive.join(', ')
     const negEffects = strain.effects.negative.join(', ')
-    console.log(posEffects)
+    // console.log(posEffects)
     return(
-      <div className="weed-card">
+      <div className="weed-card" key={strain.name}>
         <div className="card-top">
           <img src='/assets/weedbutler.png' alt='weed butler logo' className='icon'/>
           <div className="card-name-race">
@@ -33,19 +31,14 @@ const CardsContainer = observer( () => {
         </div>
       </div>
     )
-  })
 
-  // const showCards = 
-    // weedStore.allStrains.map(strain => )
-  //  <div>{weedStore.allStrains[0]}</div>
-  
-  
+    })
+
   return (
     <section className="CardsContainer">
       {displayCards}
-      {console.log(weedStore.allStrains[0])}
     </section>
-  );
+  )
 })
 
-export default CardsContainer
+export default StrainCards

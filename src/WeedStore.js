@@ -9,14 +9,13 @@ export default class WeedStore {
   userInfo = '';
   filteredStrains = [];
   homePageCategories = ['Activity', 'Mood', 'Medicinal', 'Quiz'];
-  medicalEffects = ['Depression', 'Insomnia', 'Pain', 'Stress', 'Lack of Appetite', 'Nausea', 'Headache', 'Fatigue', 'Headaches', 'Eye Pressure', 'Inflammation', 'Spasticity', 'Siezures', 'Muscle Spasms'];
-  positiveEffects = ['Relaxed', 'Hungry', 'Euphoric', 'Happy', 'Energetic', 'Talkative', 'Uplifted', 'Tingly', 'Sleepy', 'Focused', 'Giggly', 'Aroused'];
+  medicinal = ['Depression', 'Insomnia', 'Pain', 'Stress', 'Lack of Appetite', 'Nausea', 'Headache', 'Fatigue', 'Headaches', 'Eye Pressure', 'Inflammation', 'Spasticity', 'Seizures', 'Muscle Spasms'];
+  mood = ['Relaxed', 'Hungry', 'Euphoric', 'Happy', 'Energetic', 'Talkative', 'Uplifted', 'Tingly', 'Sleepy', 'Focused', 'Giggly', 'Aroused'];
   negativeEffects = ['Dizzy', 'Dry Mouth', 'Paranoid', 'Dry Eyes', 'Anxious'];
 
   fetchData = async () => {
     let data = await allStrainsData();
     this.allData = await data;
-    console.log(this.allData);
     await this.setNewData()
   }
 
@@ -27,7 +26,7 @@ export default class WeedStore {
     })
     this.allStrains = strainsArray
     this.currentStrains = strainsArray
-    console.log(this.allStrains);
+    // console.log(this.allStrains);
     
   }
 }
