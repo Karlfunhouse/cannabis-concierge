@@ -6,8 +6,8 @@ import { WeedStoreContext } from "../../WeedStore";
 
 const MedicalAndEffectsFilter = observer(() => {
   const weedStore = useContext(WeedStoreContext);
-  const location = useLocation();
-  const locationPath = location.pathname.substr(1)
+  const location = useLocation(); //returns path of page for conditional
+  const locationPath = location.pathname.substr(1) // taking off forward slash
 
   let selectorStatus = [...weedStore[locationPath]].reduce((allItems, item) => {
     allItems[item] = false

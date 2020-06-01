@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import "./StrainCard.css";
+import "./StrainCards.css";
 import { WeedStoreContext } from "../../WeedStore";
 import { observer } from "mobx-react-lite";
 
-const StrainCard = observer(() => {
+const StrainCards = observer(() => {
   const weedStore = useContext(WeedStoreContext);
   const displayCards = weedStore.currentStrains.map(strain => {
     const posEffects = strain.effects.positive.join(', ')
@@ -35,10 +35,10 @@ const StrainCard = observer(() => {
     })
 
   return (
-    <>
+    <section className="CardsContainer">
       {displayCards}
-    </>
+    </section>
   )
 })
 
-export default StrainCard
+export default StrainCards

@@ -4,7 +4,7 @@ import Login from '../Login/Login.js';
 import { Switch, Route } from 'react-router-dom';
 import NavBar from '../NavBar/NavBar.js';
 import CategoryCards from '../CategoryCards/CategoryCards.js';
-import CardsContainer from '../CardsContainer/CardsContainer.js';
+import StrainCards from '../StrainCards/StrainCards.js';
 import ExpandedCard from '../ExpandedCard/ExpandedCard';
 import { WeedStoreContext } from '../../WeedStore';
 import MedicalAndEffectsFilter from '../MedicalAndEffectsFilter/MedicalAndEffectsFilter';
@@ -35,7 +35,7 @@ const App = () => {
             <div>
               <NavBar />
               <MedicalAndEffectsFilter />
-              <CardsContainer />
+              <StrainCards />
             </div>
           )}
         />
@@ -54,7 +54,7 @@ const App = () => {
             <div>
               <NavBar />
               <MedicalAndEffectsFilter />
-              <CardsContainer />
+              <StrainCards />
             </div>
           )}
         />
@@ -63,7 +63,7 @@ const App = () => {
           component={() => (
             <div>
               <NavBar />
-              <CardsContainer />
+              <StrainCards />
             </div>
           )}
         />
