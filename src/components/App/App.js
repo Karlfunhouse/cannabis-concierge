@@ -35,8 +35,7 @@ const App = () => {
             <div>
               <NavBar />
               <MedicalFilter />
-              <CardsContainer />
-              <ExpandedCard />
+              <CardsContainer /> 
             </div>
           )}
         />

@@ -8,31 +8,39 @@ const MedicalFilter = observer(() => {
   const weedStore = useContext(WeedStoreContext);
   const location = useLocation();
   const { type } = useParams();
+
+  let medicalItemsStatus = [...weedStore.medicalEffects].reduce((allItems, item) => {
+    allItems[item] = false
+    return allItems
+  }, {});
   
   
-  const allFilterClickListener = async (e) => {
-    console.log(type);
-    console.log(location.pathname);
-    console.log("FILTER clicked", e.target.name);
+  const allFilterClickListener = (e) => {
     const name = e.target.name
-    console.log(e.target.checked);
-    
+    let selectors = []
     if (e.target.checked) {
-      weedStore.currentStrains = weedStore.currentStrains.filter(strain => {
-        return  strain.effects.medical.includes(name); 
-      });
+      medicalItemsStatus[name] = true;
     }
-    else {
-      let filterIn = weedStore.allStrains.filter(strain => strain.effects.medical.includes(name))
-      
-      weedStore.currentStrains = weedStore.currentStrains.filter((strain) => {
-        return !(strain.effects.medical.includes(name));
-      });
-      console.log(filterIn);
+    if (!e.target.checked) {
+      medicalItemsStatus[name] = false;
     }
-    console.log(weedStore.currentStrains.length);
-    console.log(weedStore.currentStrains);
-    
+    weedStore.medicalEffects.forEach(
+      (effect) => medicalItemsStatus[effect] && selectors.push(effect)
+    );
+    if (selectors.length === 0) {
+      weedStore.currentStrains = weedStore.allStrains
+    }
+    let filtered = weedStore.allStrains.filter((strain) => {
+      return selectors.every((effect) => {
+        return strain.effects.medical.indexOf(effect) !== -1;
+      });
+    });
+    weedStore.currentStrains = filtered;
+    console.log(selectors);
+    console.log("weed store ", weedStore.currentStrains);
+    console.log("weed store size", weedStore.currentStrains.length);
+    console.log("weed store ", weedStore.currentStrains);
+    console.log("weed store size", weedStore.currentStrains.length);
   }
     
   const selectionMenu = weedStore.medicalEffects.map((effect) => (

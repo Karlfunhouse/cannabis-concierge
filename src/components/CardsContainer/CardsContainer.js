@@ -6,11 +6,11 @@ import { observer } from 'mobx-react-lite';
 
 const CardsContainer = observer( () => {
   const weedStore = useContext(WeedStoreContext)
-  const weedSample = weedStore.allStrains.slice(0, 12)
-  const displayCards = weedSample.map(strain => {
+  // const weedSample = weedStore.allStrains.slice(0, 12)
+  const displayCards = weedStore.currentStrains.map(strain => {
     const posEffects = strain.effects.positive.join(', ')
     const negEffects = strain.effects.negative.join(', ')
-    console.log(posEffects)
+    // console.log(posEffects)
     return(
       <div className="weed-card">
         <div className="card-top">
@@ -34,16 +34,11 @@ const CardsContainer = observer( () => {
       </div>
     )
   })
-
-  // const showCards = 
-    // weedStore.allStrains.map(strain => )
-  //  <div>{weedStore.allStrains[0]}</div>
-  
   
   return (
     <section className="CardsContainer">
       {displayCards}
-      {console.log(weedStore.allStrains[0])}
+      {/* {console.log(weedStore.allStrains[0])} */}
     </section>
   );
 })
