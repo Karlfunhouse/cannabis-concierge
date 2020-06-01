@@ -10,10 +10,10 @@ main {
 
 .error-msg {
   color: #F00511;
-  width: 30%;
   font-weight: bold;
-  padding: 10px;
   margin: 20px auto;
+  padding: 10px;
+  width: 30%;
 }
 
 .hide {
@@ -21,22 +21,21 @@ main {
 }
 
 .age-alert {
-  width: 30%;
+  background-color: white;
+  color: black;
+  height: 150px;
   left: 35%;
+  padding-top: 50px;
   position: absolute;
   top: 300px;
-  background-color: white;
-  height: 150px;
-  color: black;
-  padding-top: 50px;
+  width: 30%;
 }
-
-
 
 form {
   background-color: rgba(117, 117, 125, 0.4);
-  width: 60%;
   height: 72%;
+  padding-top: 4%;
+  width: 60%;
 }
 
 h2 {
@@ -57,7 +56,6 @@ span {
 
 .login-logo {
   width: 30%;
-
 }
 
 .username-input {
@@ -68,8 +66,8 @@ span {
 .age-btns {
   border: none;
   cursor: pointer;
-  padding: 1%;
   margin: 3% 3% 0 3%;
+  padding: 1%;
   width: 20%;
 }
 

@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
 import "./NavBar.css";
 import { WeedStoreContext } from "../../WeedStore";
-
-
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   const weedStore = useContext(WeedStoreContext);
@@ -10,11 +9,13 @@ const NavBar = () => {
   return (
     <header>
       <div className="logo-area">
-        <img
-          src="/assets/weedbutler.png"
-          alt="weed butler logo"
-          className="logo-icon"
-        />
+        <Link to="/home" >
+          <img
+            src="/assets/weedbutler.png"
+            alt="weed butler logo"
+            className="logo-icon"
+          />
+        </Link>
         <div className="logo-words">
           <h2>
             Welcome to <span>Cannabis</span> Concierge
@@ -30,9 +31,11 @@ const NavBar = () => {
           <button type="button" className="button favorite-button">
             Favorites - 0
           </button>
-          <button type="button" className="button logout-button">
-            Logout
-          </button>
+          <Link to="/">
+            <button type="button" className="button logout-button">
+              Logout
+            </button>
+          </Link>
         </div>
       </div>
     </header>

@@ -3,14 +3,16 @@
 }
 
 .category-button {
-  /* width: 500px; */
-  height: 150px;
+  align-items: center;
   background-color: #F4F4F6;
+  border-radius: 30px;
+  box-shadow: 2px 2px #00000022;
+  cursor: pointer;
+  display: flex;
+  height: 150px;
+  justify-content: center;
   margin: 50px;
   padding: 50px;
-  border-radius: 30px;
-  cursor: pointer;
-  box-shadow: 2px 2px #00000022;
 }
 
 .category-cards {
@@ -20,8 +22,8 @@
   justify-content: space-around;
 }
 
-a {
+.category-cards a {
+  min-width: 375px;
   text-decoration: none;
   width: 40%;
-  min-width: 375px;
 }
