@@ -7,7 +7,7 @@ import CategoryCards from '../CategoryCards/CategoryCards.js';
 import CardsContainer from '../CardsContainer/CardsContainer.js';
 import ExpandedCard from '../ExpandedCard/ExpandedCard';
 import { WeedStoreContext } from '../../WeedStore';
-import MedicalFilter from '../MedicalFilter/MedicalFilter';
+import MedicalAndEffectsFilter from '../MedicalAndEffectsFilter/MedicalAndEffectsFilter';
 
 const App = () => {
 
@@ -34,8 +34,8 @@ const App = () => {
           component={() => (
             <div>
               <NavBar />
-              <MedicalFilter />
-              <CardsContainer /> 
+              <MedicalAndEffectsFilter />
+              <CardsContainer />
             </div>
           )}
         />
@@ -53,6 +53,8 @@ const App = () => {
           component={() => (
             <div>
               <NavBar />
+              <MedicalAndEffectsFilter />
+              <CardsContainer />
             </div>
           )}
         />
