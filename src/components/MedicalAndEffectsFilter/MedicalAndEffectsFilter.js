@@ -9,47 +9,33 @@ const MedicalAndEffectsFilter = observer(() => {
   const location = useLocation(); //returns path of page for conditional
   const locationPath = location.pathname.substr(1) // taking off forward slash
 
-  let selectorStatus = [...weedStore[locationPath]].reduce((allItems, item) => {
-    allItems[item] = false
-    return allItems
-  }, {});
-  
-  
+  // let selectorStatus = weedStore.getSelectorStatus(locationPath)
+
+  // [...weedStore[locationPath]].reduce((allItems, item) => {
+  //   allItems[item] = false
+  //   return allItems
+  // }, {});
+
+
   const allFilterClickListener = (e) => {
+    weedStore.getSelectorStatus(locationPath)
+    weedStore.resetDesiredEffects()
     const name = e.target.name
-    let selectors = []
     if (e.target.checked) {
-      selectorStatus[name] = true;
+      weedStore.selectorStatus[name] = true;
     }
     if (!e.target.checked) {
-      selectorStatus[name] = false;
+      weedStore.selectorStatus[name] = false;
     }
     weedStore[locationPath].forEach(
-      (effect) => selectorStatus[effect] && selectors.push(effect)
+      (effect) => weedStore.selectorStatus[effect] && weedStore.addDeseriredEffect(effect)
     );
-    if (selectors.length === 0) {
-      weedStore.currentStrains = weedStore.allStrains
+    if (weedStore.filterSelectors.length === 0) {
+      weedStore.resetCurrentStrains()
     }
-    let filtered = weedStore.allStrains.filter((strain) => {
-      return selectors.every((effect) => {
-        if (locationPath === "medicinal") {
-          return strain.effects.medical.indexOf(effect) !== -1;
-        }
-        if (locationPath === "mood") {
-          return strain.effects.positive.indexOf(effect) !== -1;
-        }
-      });
-    });
-    weedStore.currentStrains = filtered;
-    console.log(locationPath);
-    
-    console.log(selectors);
-    console.log("weed store ", weedStore.currentStrains);
-    console.log("weed store size", weedStore.currentStrains.length);
-    console.log("weed store ", weedStore.currentStrains);
-    console.log("weed store size", weedStore.currentStrains.length);
+    weedStore.getFilteredStrains(locationPath)
   }
-    
+
   const selectionMenu = weedStore[locationPath].map((effect) => (
     <div key={effect} className="med-input">
       <input onClick={(e) => allFilterClickListener(e)} type="checkbox" name={effect} />

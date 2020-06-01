@@ -20,7 +20,7 @@ const StrainCards = observer(() => {
             </div>
           </div>
           <img className="favorite-button-icon"
-            src={strain.favorite ? '/assets/favorite-yes.png' : '/assets/favorite-yep.png'} 
+            src={strain.favorite ? '/assets/favorite-yes.png' : '/assets/favorite-yep.png'}
             alt={strain.favorite ? 'favorited strain image' : 'unfavorited strain image'}
           />
         </div>
