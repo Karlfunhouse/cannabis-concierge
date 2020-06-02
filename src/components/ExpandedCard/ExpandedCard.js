@@ -42,8 +42,11 @@ const ExpandedCard = observer(() => {
       <div className='strain-overview-right-box'>
         <button className='back-button'>Back</button>
         <button className='favorite-strain-button'>
-          Favorite
-          <img className='favorite-img' src="/assets/favorite-nope.png" alt="fire-icon"/>
+        Favorite
+          <img className="favorite-button-icon"
+            src={weedStore.selectedStrain.favorite ? '/assets/favorite-yes.png' : '/assets/favorite-nope.png'}
+            alt={weedStore.selectedStrain.favorite  ? 'favorited strain image' : 'unfavorited strain image'}
+          />
           </button>
       </div>
     </section>
