@@ -63,7 +63,7 @@ export default class WeedStore {
   setStrainStatusTrue = (name) => {
     this.selectorStatus[name] = true
   }
-  
+
   setStrainStatusFalse = (name) => {
     this.selectorStatus[name] = false
   }
@@ -72,7 +72,6 @@ export default class WeedStore {
     this.filterSelectors = []
   }
 
-<<<<<<< HEAD
   setSelectedStrain = (selectedStrain) => {
     this.selectedStrain = {}
     let selectedObject = this.allStrains.find(strain => strain.name === selectedStrain)
@@ -96,23 +95,6 @@ decorate (
     addDeseriredEffect: action
    }
 )
-=======
-}
 
-decorate(WeedStore, {
-  allStrains: observable,
-  currentStrains: observable,
-  userInfo: observable,
-  filterSelectors: observable,
-  getSelectorStatus: action,
-  fetchData: action,
-  resetCurrentStrains: action,
-  getFilteredStrains: action,
-  addDeseriredEffect: action,
-  setStrainStatusTrue: action,
-  setStrainStatusFalse: action,
-  resetDesiredEffects: action
-});
->>>>>>> master
 
 export const WeedStoreContext = createContext(new WeedStore())

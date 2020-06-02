@@ -3,7 +3,6 @@ import "./StrainCards.css";
 import { Link } from 'react-router-dom'
 import { WeedStoreContext } from "../../WeedStore";
 import { observer } from "mobx-react-lite";
-import { Link } from "react-router-dom";
 
 
 const StrainCards = observer(() => {
@@ -20,7 +19,7 @@ const StrainCards = observer(() => {
     const posEffects = strain.effects.positive.join(', ')
     const negEffects = strain.effects.negative.join(', ')
     return (
-      <div className="weed-card" key={strain.name} onClick={() => weedStore.setSelectedStrain(strain.name)>
+      <div className="weed-card" key={strain.name} onClick={() => weedStore.setSelectedStrain(strain.name)}>
         <Link to={`/expanded_view/${strain.name}`}>
           <div className="card-top">
             <img
