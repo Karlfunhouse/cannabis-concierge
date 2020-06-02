@@ -10,6 +10,7 @@ export default class WeedStore {
   filterSelectors = [];
   filteredStrains = [];
   selectorStatus = {};
+  selectedStrain = {}
   homePageCategories = ['Activity', 'Mood', 'Medicinal', 'Quiz'];
   medicinal = ['Depression', 'Insomnia', 'Pain', 'Stress', 'Lack of Appetite', 'Nausea', 'Headache', 'Fatigue', 'Headaches', 'Eye Pressure', 'Inflammation', 'Spasticity', 'Seizures', 'Muscle Spasms'];
   mood = ['Relaxed', 'Hungry', 'Euphoric', 'Happy', 'Energetic', 'Talkative', 'Uplifted', 'Tingly', 'Sleepy', 'Focused', 'Giggly', 'Aroused'];
@@ -63,6 +64,13 @@ export default class WeedStore {
   resetDesiredEffects = () => {
     this.filterSelectors = []
   }
+
+  setSelectedStrain = (selectedStrain) => {
+    this.selectedStrain = {}
+    let selectedObject = this.allStrains.find(strain => strain.name === selectedStrain)
+    this.selectedStrain = selectedObject
+  }
+
 }
 
 decorate (
@@ -72,6 +80,7 @@ decorate (
     userInfo: observable,
     filterSelectors: observable,
     getSelectorStatus: action,
+    setSelectedStrain: action,
     fetchData: action,
     resetDesiredEffects: action,
     resetCurrentStrains: action,
