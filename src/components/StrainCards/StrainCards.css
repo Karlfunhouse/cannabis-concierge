@@ -93,3 +93,8 @@
   margin: 0 5px 3px 0;
   width: 20px;
 }
+
+.weed-card a {
+  text-decoration: none;
+  color: black;
+}

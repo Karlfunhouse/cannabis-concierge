@@ -40,7 +40,7 @@ const App = () => {
           )}
         />
         <Route
-          path="/expanded_view"
+          path="/expanded_view/:strain_name"
           component={() => (
             <div>
               <NavBar />
