@@ -7,12 +7,13 @@
 
 .selection-menu {
   background-color: #F4F4F6;
+  box-shadow: 2px 2px #00000022;
   border-radius: 30px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   height: 200px;
-  margin: 0 auto;
+  margin: 0 auto 20px;
   padding: 40px 40px 40px 110px;
   text-align: left;
   width: 60%;
