@@ -1,5 +1,6 @@
 import React, { useEffect, useContext } from 'react';
 import './App.css';
+import { observer } from "mobx-react-lite";
 import Login from '../Login/Login.js';
 import { Switch, Route } from 'react-router-dom';
 import NavBar from '../NavBar/NavBar.js';
@@ -9,7 +10,7 @@ import ExpandedCard from '../ExpandedCard/ExpandedCard';
 import { WeedStoreContext } from '../../WeedStore';
 import MedicalAndEffectsFilter from '../MedicalAndEffectsFilter/MedicalAndEffectsFilter';
 
-const App = () => {
+const App = observer(() => {
 
   const weedStore = useContext(WeedStoreContext);
 
@@ -21,6 +22,15 @@ const App = () => {
   return (
     <div className="App">
       <Switch>
+        <Route
+          path="/expanded_view/:strain_name"
+          component={() => (
+            <div>
+              <NavBar />
+              <ExpandedCard />
+            </div>
+          )}
+        />
         <Route
           path="/quiz"
           component={() => (
@@ -36,15 +46,6 @@ const App = () => {
               <NavBar />
               <MedicalAndEffectsFilter />
               <StrainCards />
-            </div>
-          )}
-        />
-        <Route
-          path="/expanded_view/:strain_name"
-          component={() => (
-            <div>
-              <NavBar />
-              <ExpandedCard />
             </div>
           )}
         />
@@ -80,6 +81,6 @@ const App = () => {
       </Switch>
     </div>
   );
-}
+})
 
 export default App;

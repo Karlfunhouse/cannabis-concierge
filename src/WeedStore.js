@@ -8,11 +8,10 @@ export default class WeedStore {
   currentStrains = [];
   userInfo = '';
   filterSelectors = [];
-  filteredStrains = [];
   selectorStatus = {};
   selectedStrain = {}
   homePageCategories = ['Activity', 'Mood', 'Medicinal', 'Quiz'];
-  medicinal = ['Depression', 'Insomnia', 'Pain', 'Stress', 'Lack of Appetite', 'Nausea', 'Headache', 'Fatigue', 'Headaches', 'Eye Pressure', 'Inflammation', 'Spasticity', 'Seizures', 'Muscle Spasms'];
+  medicinal = ['Depression', 'Insomnia', 'Pain', 'Stress', 'Lack of Appetite', 'Nausea', 'Fatigue', 'Headaches', 'Eye Pressure', 'Inflammation', 'Spasticity', 'Seizures', 'Muscle Spasms'];
   mood = ['Relaxed', 'Hungry', 'Euphoric', 'Happy', 'Energetic', 'Talkative', 'Uplifted', 'Tingly', 'Sleepy', 'Focused', 'Giggly', 'Aroused'];
   negativeEffects = ['Dizzy', 'Dry Mouth', 'Paranoid', 'Dry Eyes', 'Anxious'];
 
@@ -50,7 +49,7 @@ export default class WeedStore {
     }
 
   getSelectorStatus = (locationPath) => {
-    let test = [`...this.${locationPath}`].reduce((allItems, item) => {
+    let test = this.medicinal.reduce((allItems, item) => {
       allItems[item] = false
       return allItems
     }, {});
@@ -61,10 +60,19 @@ export default class WeedStore {
     this.filterSelectors.push(effect)
   }
 
+  setStrainStatusTrue = (name) => {
+    this.selectorStatus[name] = true
+  }
+  
+  setStrainStatusFalse = (name) => {
+    this.selectorStatus[name] = false
+  }
+
   resetDesiredEffects = () => {
     this.filterSelectors = []
   }
 
+<<<<<<< HEAD
   setSelectedStrain = (selectedStrain) => {
     this.selectedStrain = {}
     let selectedObject = this.allStrains.find(strain => strain.name === selectedStrain)
@@ -88,5 +96,23 @@ decorate (
     addDeseriredEffect: action
    }
 )
+=======
+}
+
+decorate(WeedStore, {
+  allStrains: observable,
+  currentStrains: observable,
+  userInfo: observable,
+  filterSelectors: observable,
+  getSelectorStatus: action,
+  fetchData: action,
+  resetCurrentStrains: action,
+  getFilteredStrains: action,
+  addDeseriredEffect: action,
+  setStrainStatusTrue: action,
+  setStrainStatusFalse: action,
+  resetDesiredEffects: action
+});
+>>>>>>> master
 
 export const WeedStoreContext = createContext(new WeedStore())

@@ -3,6 +3,8 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+  height: 90vh;
+  overflow: scroll;
 }
 
 .weed-card {
@@ -13,9 +15,11 @@
   flex-direction: column;
   justify-content: center;
   margin: 1%;
+  min-width: 285px;
   overflow-wrap: break-word;
   padding: 1%;
   width: 23%;
+  max-height: 220px;
 }
 
 .card-top {
@@ -97,4 +101,10 @@
 .weed-card a {
   text-decoration: none;
   color: black;
+}
+
+.no-selection-alert img {
+  filter: drop-shadow(0 0 0.50rem #75757D);
+  margin-top: 10px;
+  width: 70%;
 }

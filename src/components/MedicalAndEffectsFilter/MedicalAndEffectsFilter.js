@@ -9,15 +9,16 @@ const MedicalAndEffectsFilter = observer(() => {
   const location = useLocation(); //returns path of page for conditional
   const locationPath = location.pathname.substr(1) // taking off forward slash
 
+  weedStore.getSelectorStatus(locationPath)
+
   const allFilterClickListener = (e) => {
-    weedStore.getSelectorStatus(locationPath)
     weedStore.resetDesiredEffects()
     const name = e.target.name
     if (e.target.checked) {
-      weedStore.selectorStatus[name] = true;
+      weedStore.setStrainStatusTrue(name)
     }
     if (!e.target.checked) {
-      weedStore.selectorStatus[name] = false;
+      weedStore.setStrainStatusFalse(name)
     }
     weedStore[locationPath].forEach(
       (effect) => weedStore.selectorStatus[effect] && weedStore.addDeseriredEffect(effect)
