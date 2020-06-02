@@ -11,7 +11,7 @@ const StrainCards = observer(() => {
     const negEffects = strain.effects.negative.join(', ')
 
     return(
-        <div className="weed-card" key={strain.name}>
+        <div className="weed-card" key={strain.name} onClick={() => weedStore.setSelectedStrain(strain.name)}>
         <Link to={`/expanded_view/${strain.name}`}>
           <div className="card-top">
             <img src='/assets/weedbutler.png' alt='weed butler logo' className='icon'/>
