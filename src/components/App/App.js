@@ -18,8 +18,10 @@ const App = observer(() => {
 
   useEffect(() => {
     weedStore.fetchData();
-    console.log(weedStore.userInfo);
-  }, [])
+    // weedStore.updateLoginName()
+    console.log(weedStore.currentStrain);
+    weedStore.populateDataFromLS();
+  }, [weedStore])
 
   return (
     <div className="App">

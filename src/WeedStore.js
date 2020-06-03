@@ -1,12 +1,12 @@
-import { observable, action, computed, decorate } from "mobx";
-import { allStrainsData } from "./apiRequest";
+import { observable, action, decorate } from "mobx";
+import { allStrainsData, strainDesc } from "./apiRequest";
 import { createContext } from 'react'
 
 export default class WeedStore {
   allData = [];
   allStrains = [];
   currentStrains = [];
-  userInfo = '';
+  userInfo = "";
   filterSelectors = [];
   favoritedStrains = [];
   selectorStatus = {};
@@ -47,6 +47,13 @@ export default class WeedStore {
     let data = await allStrainsData();
     this.allData = await data;
     await this.setNewData()
+  }
+
+  fetchStrainDesc = async () => {
+    console.log(this.selectedStrain.id);
+    let descData = await strainDesc(this.selectedStrain.id);
+    console.log(descData);
+    return descData
   }
 
   setNewData = async () => {
@@ -122,11 +129,24 @@ export default class WeedStore {
     }
   }
 
-  setSelectedStrain = (selectedStrain) => {
+  setSelectedStrain = async (selectedStrain) => {
     this.selectedStrain = {}
     let selectedObject = this.allStrains.find(strain => strain.name === selectedStrain)
     this.selectedStrain = selectedObject
+    let description = await this.fetchStrainDesc(this.selectedStrain.id);
+    this.selectedStrain.description = description.desc
   }
+
+  updateLoginName = (name) => {
+    this.userInfo = name
+  }
+
+  populateDataFromLS = () => {
+    const user = localStorage.getItem("userName") || "";
+    if (user) {
+      this.userInfo = user
+    }
+  } 
 
   setFavorite = () => {
     !this.selectedStrain.favorite ? this.selectedStrain.favorite = true : this.selectedStrain.favorite = false
@@ -157,6 +177,7 @@ decorate(WeedStore, {
   getSelectorStatus: action,
   setSelectedStrain: action,
   fetchData: action,
+  selectedStrain: observable,
   trackFavorites: action,
   resetCurrentStrains: action,
   getFilteredStrains: action,
@@ -168,7 +189,11 @@ decorate(WeedStore, {
   filteredByEffect: observable,
   updateFilterByEffect: action,
   noFlavorsSelected: observable,
+  updateLoginName: action,
+  populateDataFromLS: action,
+  favoritedStrains: observable,
+  fetchStrainDesc: action,
   setActivityStrains: observable
-})
+});
 
 export const WeedStoreContext = createContext(new WeedStore())
