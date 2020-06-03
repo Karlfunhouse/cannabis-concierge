@@ -9,7 +9,11 @@ const CategoryCards = () => {
   const weedStore = useContext(WeedStoreContext);
   const displayCards = weedStore.homePageCategories.map((category) => (
     <Link key={category} to={`${category.toLowerCase()}`}>
-      <div key={category} className="category-button">
+      <div
+        key={category}
+        className="category-button"
+        onClick={(e) => weedStore.updateFilterByEffect(e.target.innerText)}
+      >
         <h2 className="category-title">{category}</h2>
       </div>
     </Link>
