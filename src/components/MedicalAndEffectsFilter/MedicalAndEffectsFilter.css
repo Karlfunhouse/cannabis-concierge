@@ -43,9 +43,10 @@
   background-color: #F4F4F6;
   padding: 5px;
   border-radius: 5px;
+  margin: 0 10px;
 }
 
 .selected-topic {
-  color: #07B35A;
-  background-color: #F0FFCE  !important;
+  color: #F4F4F6;
+  background-color: #07B35A  !important;
 }
