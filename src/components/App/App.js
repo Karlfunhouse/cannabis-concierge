@@ -45,7 +45,7 @@ const App = observer(() => {
             <div>
               <NavBar />
               <MedicalAndEffectsFilter />
-              <StrainCards /> 
+              <StrainCards />
             </div>
           )}
         />
