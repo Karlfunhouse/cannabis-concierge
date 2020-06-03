@@ -8,6 +8,7 @@ export default class WeedStore {
   currentStrains = [];
   userInfo = '';
   filterSelectors = [];
+  favoritedStrains = [];
   selectorStatus = {};
   noFlavorsSelected = null;
   selectedStrain = {}
@@ -20,7 +21,7 @@ export default class WeedStore {
     "Apple", "Rose", "Butter", "Honey", "Tea", "Lime", "Lavender", "Strawberry", "Mint", "Chestnut", "Tree Fruit", "Pear", "Apricot", "Peach", "Blue Cheese", "Menthol",
     "Coffee", "Tar", "Mango", "Pineapple", "Sage", "Vanilla", "Plum", "Tobacco", "Violet"]
   filteredByEffect = null;
-  
+
   fetchData = async () => {
     let data = await allStrainsData();
     this.allData = await data;
@@ -80,7 +81,7 @@ export default class WeedStore {
 
   filterByFlavor = (e) => {
     this.resetCurrentStrains();
-    this.noFlavorsSelected = false;    
+    this.noFlavorsSelected = false;
     this.currentStrains = this.currentStrains.filter(strain => strain.flavors.includes(e))
   }
 
@@ -106,6 +107,20 @@ export default class WeedStore {
     this.selectedStrain = selectedObject
   }
 
+  setFavorite = () => {
+    !this.selectedStrain.favorite ? this.selectedStrain.favorite = true : this.selectedStrain.favorite = false
+    this.trackFavorites()
+  }
+
+  trackFavorites = () => {
+    if (!this.favoritedStrains.includes(this.selectedStrain)) {
+      this.favoritedStrains.push(this.selectedStrain)
+    } else {
+      let indexNum = this.favoritedStrains.indexOf(this.selectedStrain)
+      this.favoritedStrains.splice(indexNum, 1)
+    }
+  }
+
 }
 
 decorate(WeedStore, {
@@ -116,6 +131,7 @@ decorate(WeedStore, {
   getSelectorStatus: action,
   setSelectedStrain: action,
   fetchData: action,
+  trackFavorites: action,
   resetCurrentStrains: action,
   getFilteredStrains: action,
   addDeseriredEffect: action,
