@@ -8,6 +8,7 @@ export default class WeedStore {
   currentStrains = [];
   userInfo = '';
   filterSelectors = [];
+  favoritedStrains = [];
   selectorStatus = {};
   selectedStrain = {}
   homePageCategories = ['Activity', 'Mood', 'Medicinal', 'Quiz'];
@@ -78,6 +79,20 @@ export default class WeedStore {
     this.selectedStrain = selectedObject
   }
 
+  setFavorite = () => {
+    !this.selectedStrain.favorite ? this.selectedStrain.favorite = true : this.selectedStrain.favorite = false
+    this.trackFavorites()
+  }
+
+  trackFavorites = () => {
+    if (!this.favoritedStrains.includes(this.selectedStrain)) {
+      this.favoritedStrains.push(this.selectedStrain)
+    } else {
+      let indexNum = this.favoritedStrains.indexOf(this.selectedStrain)
+      this.favoritedStrains.splice(indexNum, 1)
+    }
+  }
+
 }
 
 decorate (
@@ -86,15 +101,17 @@ decorate (
     currentStrains: observable,
     userInfo: observable,
     filterSelectors: observable,
+    favoritedStrains: observable,
     getSelectorStatus: action,
     setSelectedStrain: action,
     fetchData: action,
+    trackFavorites: action,
     resetDesiredEffects: action,
     resetCurrentStrains: action,
     getFilteredStrains: action,
-    addDeseriredEffect: action
+    addDeseriredEffect: action,
+    setFavorite: action
    }
 )
-
 
 export const WeedStoreContext = createContext(new WeedStore())
