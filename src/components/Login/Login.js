@@ -3,8 +3,6 @@ import './Login.css';
 import { WeedStoreContext } from "../../WeedStore";
 import { Link } from 'react-router-dom';
 
-// import { useWeedStore } from '../../hooks.js';
-
 const Login = () => {
   const weedStore = useContext(WeedStoreContext);
   const [errorMsg, addError] = useState('')
@@ -39,6 +37,5 @@ const Login = () => {
     </main>
   )
 }
-
 
 export default Login;

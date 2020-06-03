@@ -1,5 +1,5 @@
 .category-title {
-  color: black;
+  color: #454955;
 }
 
 .category-button {
@@ -22,8 +22,13 @@
   justify-content: space-around;
 }
 
+.category-button:hover {
+  background-color: #07B35A;
+  font-style: italic;
+}
+
 .category-cards a {
   min-width: 375px;
   text-decoration: none;
-  width: 40%;
+  width: 50%;
 }

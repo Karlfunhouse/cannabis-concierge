@@ -2,8 +2,9 @@ import React, { useContext } from "react";
 import "./NavBar.css";
 import { WeedStoreContext } from "../../WeedStore";
 import { Link } from 'react-router-dom';
+import { observer } from 'mobx-react-lite';
 
-const NavBar = () => {
+const NavBar = observer(() => {
   const weedStore = useContext(WeedStoreContext);
 
   return (
@@ -29,7 +30,7 @@ const NavBar = () => {
         <h3>Welcome, {weedStore.userInfo}</h3>
         <div className="menu-buttons">
           <button type="button" className="button favorite-button">
-            Favorites - 0
+            Favorites - {weedStore.favoritedStrains.length}
           </button>
           <Link to="/">
             <button type="button" className="button logout-button">
@@ -40,5 +41,5 @@ const NavBar = () => {
       </div>
     </header>
   );
-};
+});
 export default NavBar;
