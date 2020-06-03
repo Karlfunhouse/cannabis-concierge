@@ -132,7 +132,10 @@ export default class WeedStore {
   setSelectedStrain = async (selectedStrain) => {
     this.selectedStrain = {}
     let selectedObject = this.allStrains.find(strain => strain.name === selectedStrain)
-    this.selectedStrain = selectedObject
+
+    const weedImgs = ['/assets/Cannabis1.jpeg', '/assets/Cannabis2.jpeg', '/assets/Cannabis3.jpeg', '/assets/Cannabis4.jpeg', '/assets/Cannabis5.jpeg', '/assets/Cannabis6.jpeg']
+    let imgNum =  Math.floor(Math.random() * weedImgs.length)
+    this.selectedStrain = {...selectedObject, img: weedImgs[imgNum]}
     let description = await this.fetchStrainDesc(this.selectedStrain.id);
     this.selectedStrain.description = description.desc
   }
@@ -154,6 +157,11 @@ export default class WeedStore {
   }
 
   trackFavorites = () => {
+    let foundStrain = this.allStrains.find(strain => strain.name === this.selectedStrain.name)
+    let indexNum = this.allStrains.indexOf(foundStrain)
+
+    this.allStrains[indexNum].favorite ? this.allStrains[indexNum].favorite = false : this.allStrains[indexNum].favorite = true;
+
     if (!this.favoritedStrains.includes(this.selectedStrain)) {
       this.favoritedStrains.push(this.selectedStrain)
     } else {
@@ -174,6 +182,11 @@ decorate(WeedStore, {
   currentStrains: observable,
   userInfo: observable,
   filterSelectors: observable,
+  selectedStrain: observable,
+  filteredByEffect: observable,
+  noFlavorsSelected: observable,
+  setActivityStrains: observable,
+  favoritedStrains: observable,
   getSelectorStatus: action,
   setSelectedStrain: action,
   fetchData: action,
@@ -184,11 +197,10 @@ decorate(WeedStore, {
   addDeseriredEffect: action,
   setStrainStatusTrue: action,
   setStrainStatusFalse: action,
+  setFavorite: action,
   resetDesiredEffects: action,
   filterByFlavor: action,
-  filteredByEffect: observable,
   updateFilterByEffect: action,
-  noFlavorsSelected: observable,
   updateLoginName: action,
   populateDataFromLS: action,
   favoritedStrains: observable,
