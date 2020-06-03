@@ -17,7 +17,7 @@ const App = observer(() => {
   useEffect(() => {
     weedStore.fetchData();
     // weedStore.updateLoginName()
-    console.log(weedStore.userInfo);
+    console.log(weedStore.currentStrain);
     weedStore.populateDataFromLS();
   }, [weedStore])
 
