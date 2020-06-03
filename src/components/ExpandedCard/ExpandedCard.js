@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import './ExpandedCard.css'
 import { WeedStoreContext } from '../../WeedStore'
+import { Link } from 'react-router-dom'
 import { observer } from 'mobx-react-lite';
 
 const ExpandedCard = observer(() => {
@@ -13,7 +14,6 @@ const ExpandedCard = observer(() => {
 
   return (
     <section className='expanded-strain-container'>
-    {console.log(weedStore.selectedStrain)}
       <div className='strain-overview-left-box'>
         <h2>{weedStore.selectedStrain.name}</h2>
         <p className='strain-type-tag'>{weedStore.selectedStrain.race}</p>
@@ -40,10 +40,12 @@ const ExpandedCard = observer(() => {
         </div>
       </div>
       <div className='strain-overview-right-box'>
+      <Link to='/home'>
         <button className='back-button'>Back</button>
-        <button className='favorite-strain-button'>
-        Favorite
-          <img className="favorite-button-icon"
+      </Link>
+        <button className='favorite-strain-button' onClick={() => weedStore.setFavorite()}>
+        <p className='favorite-text'>Favorite</p>
+          <img className="favorite-button-img-exapanded-card"
             src={weedStore.selectedStrain.favorite ? '/assets/favorite-yes.png' : '/assets/favorite-nope.png'}
             alt={weedStore.selectedStrain.favorite  ? 'favorited strain image' : 'unfavorited strain image'}
           />

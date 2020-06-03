@@ -92,8 +92,22 @@
   height: 55px;
   padding: .1em;
   width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .favorite-img {
   height: 75%;
+}
+
+.favorite-button-img-exapanded-card {
+  width:30%;
+  height:100%;
+}
+
+.favorite-text {
+  font-weight: 500;
+  align-self:flex-end;
+  margin: 4px 4px;
 }

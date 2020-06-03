@@ -35,7 +35,7 @@ const NavBar = observer(() => {
         <h3>Welcome, {weedStore.userInfo}</h3>
         <div className="menu-buttons">
           <button type="button" className="button favorite-button">
-            Favorites - 0
+            Favorites - {weedStore.favoritedStrains.length}
           </button>
           <Link to="/">
             <button type="button" className="button logout-button" onClick={() => clearLS()}>

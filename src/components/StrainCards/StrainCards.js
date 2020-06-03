@@ -38,7 +38,7 @@ const StrainCards = observer(() => {
               src={
                 strain.favorite
                   ? "/assets/favorite-yes.png"
-                  : "/assets/favorite-yep.png"
+                  : "/assets/favorite-nope.png"
               }
               alt={
                 strain.favorite
