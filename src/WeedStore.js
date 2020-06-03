@@ -13,6 +13,27 @@ export default class WeedStore {
   noFlavorsSelected = null;
   selectedStrain = {}
   homePageCategories = ['Activity', 'Mood', 'Medicinal', 'Quiz'];
+  currentActivity = false;
+  activities = [
+    {title: 'Netflix & Chill',
+      css: "netflix",
+      effects: ['Aroused', 'Tingly']}, //14
+    {title: 'Yoga & Meditation',
+      css: 'yoga',
+      effects: ['Uplifted', 'Euphoric', 'Happy', 'Focused']}, //108
+    {title: 'Nature',
+      css: 'nature',
+      effects: ['Happy', 'Energetic', 'Euphoric', 'Uplifted']}, //207
+    {title: 'Social / Music',
+      css: 'social',
+      effects: ['Giggly', 'Energetic', 'Talkative']}, //11
+    {title: 'Artsy',
+      css: 'artsy',
+      effects: ['Focused', 'Relaxed', 'Uplifted', 'Creative']}, //173
+    {title: 'Cooking',
+      css: 'cooking',
+      effects: ['Hungry', 'Energetic']}] //34
+
   medicinal = ['Depression', 'Insomnia', 'Pain', 'Stress', 'Lack of Appetite', 'Nausea', 'Fatigue', 'Headaches', 'Eye Pressure', 'Inflammation', 'Spasticity', 'Seizures', 'Muscle Spasms'];
   mood = ['Relaxed', 'Hungry', 'Euphoric', 'Happy', 'Energetic', 'Talkative', 'Uplifted', 'Tingly', 'Sleepy', 'Focused', 'Giggly', 'Aroused'];
   negativeEffects = ['Dizzy', 'Dry Mouth', 'Paranoid', 'Dry Eyes', 'Anxious'];
@@ -141,6 +162,11 @@ export default class WeedStore {
     }
   }
 
+  setActivityStrains = (activityStrains) => {
+    this.currentStrains = this.allStrains
+    this.currentActivity = true
+    this.currentStrains = activityStrains
+  }
 }
 
 decorate(WeedStore, {
@@ -166,7 +192,8 @@ decorate(WeedStore, {
   updateLoginName: action,
   populateDataFromLS: action,
   favoritedStrains: observable,
-  fetchStrainDesc: action
+  fetchStrainDesc: action,
+  setActivityStrains: observable
 });
 
 export const WeedStoreContext = createContext(new WeedStore())
