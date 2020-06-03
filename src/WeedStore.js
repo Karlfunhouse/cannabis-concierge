@@ -6,7 +6,7 @@ export default class WeedStore {
   allData = [];
   allStrains = [];
   currentStrains = [];
-  userInfo = '';
+  userInfo = "";
   filterSelectors = [];
   selectorStatus = {};
   noFlavorsSelected = null;
@@ -106,6 +106,17 @@ export default class WeedStore {
     this.selectedStrain = selectedObject
   }
 
+  updateLoginName = (name) => {
+    this.userInfo = name
+  }
+
+  populateDataFromLS = () => {
+    const data = localStorage.getItem("userName") || "";
+    if (data) {
+      this.userInfo = data
+    }
+  }
+
 }
 
 decorate(WeedStore, {
@@ -125,7 +136,9 @@ decorate(WeedStore, {
   filterByFlavor: action,
   filteredByEffect: observable,
   updateFilterByEffect: action,
-  noFlavorsSelected: observable
+  noFlavorsSelected: observable,
+  updateLoginName: action,
+  populateDataFromLS: action
 });
 
 export const WeedStoreContext = createContext(new WeedStore())

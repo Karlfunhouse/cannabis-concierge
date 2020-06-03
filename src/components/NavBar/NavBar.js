@@ -2,9 +2,15 @@ import React, { useContext } from "react";
 import "./NavBar.css";
 import { WeedStoreContext } from "../../WeedStore";
 import { Link } from 'react-router-dom';
+import { observer } from "mobx-react-lite";
 
-const NavBar = () => {
+
+const NavBar = observer(() => {
   const weedStore = useContext(WeedStoreContext);
+
+  const clearLS = () => {
+    localStorage.removeItem("userInfo");
+  }
 
   return (
     <header>
@@ -32,7 +38,7 @@ const NavBar = () => {
             Favorites - 0
           </button>
           <Link to="/">
-            <button type="button" className="button logout-button">
+            <button type="button" className="button logout-button" onClick={() => clearLS()}>
               Logout
             </button>
           </Link>
@@ -40,5 +46,6 @@ const NavBar = () => {
       </div>
     </header>
   );
-};
+});
+
 export default NavBar;
