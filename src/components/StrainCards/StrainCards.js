@@ -81,7 +81,7 @@ const StrainCards = observer(() => {
 
   return (
     <section className="CardsContainer">
-      {weedStore.filterSelectors.length > 0 ? displayCards : noSelectorsAlert}
+      {(weedStore.filterSelectors.length > 0 || weedStore.noFlavorsSelected === false) ? displayCards : noSelectorsAlert}
     </section>
   );
 })
