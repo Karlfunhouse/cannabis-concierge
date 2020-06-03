@@ -29,7 +29,7 @@ export default class WeedStore {
       effects: ['Giggly', 'Energetic', 'Talkative']}, //11
     {title: 'Artsy',
       css: 'artsy',
-      effects: ['Focused', 'Relaxed', 'Uplifted']}, //173
+      effects: ['Focused', 'Relaxed', 'Uplifted', 'Creative']}, //173
     {title: 'Cooking',
       css: 'cooking',
       effects: ['Hungry', 'Energetic']}] //34
