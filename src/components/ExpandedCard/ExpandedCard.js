@@ -12,13 +12,20 @@ const ExpandedCard = observer(() => {
   const posEffects = weedStore.selectedStrain.effects.positive
     .map(effect => (<p className='strain-effect-tag positive-effect'>{effect}</p>))
 
+  const weedImgs = ['/assets/Cannabis1.jpeg', '/assets/Cannabis2.jpeg', '/assets/Cannabis3.jpeg', '/assets/Cannabis4.jpeg', '/assets/Cannabis5.jpeg', '/assets/Cannabis6.jpeg']
+
+  const getRandomWeedImg = (imgArray) => {
+    let imgNum =  Math.floor(Math.random() * imgArray.length)
+    return imgNum
+  }
+
   return (
     <section className='expanded-strain-container'>
       <div className='strain-overview-left-box'>
         <h2>{weedStore.selectedStrain.name}</h2>
         <p className='strain-type-tag'>{weedStore.selectedStrain.race}</p>
         <img
-          src="/assets/Cannabis1.jpeg"
+          src={weedImgs[getRandomWeedImg(weedImgs)]}
           alt="cannabis image"
           className="cannabis-img"
         />
