@@ -2,11 +2,15 @@
 .netflix:hover,
 .yoga:hover,
 .nature:hover,
-.social:hover {
+.social:hover,
+.artsy:hover,
+.cooking:hover {
     cursor: pointer;
     opacity: 100%;
     border: 2px solid #07B35A;
 }
+
+
 
 .netflix {
     background: url('/assets/netflix-button.jpeg') no-repeat;
@@ -48,15 +52,42 @@
     opacity: 80%;
 }
 
-.activity-name {
+.artsy {
+    background: url('/assets/artsy2-button.jpeg') no-repeat;
+    border: 2px solid #454955;
+    border-radius: 15px;
+    width: 200px;
+    height: 133px;
+    margin: 1%;
+    opacity: 80%;
+}
+
+.cooking {
+    background: url('/assets/cooking-button.jpeg') no-repeat;
+    border: 2px solid #454955;
+    border-radius: 15px;
+    width: 200px;
+    height: 133px;
+    margin: 1%;
+    opacity: 80%;
+}
+
+span.activity-name {
     /* background-color: #75757D; */
     padding: 2%;
     border-radius: 15px;
     font-size: 1.7em;
+    color: black;
+    -webkit-text-fill-color: white;
+    /* -webkit-text-fill-color: black; */
+    -webkit-text-stroke-width: 0.5px;
+    /* -webkit-text-stroke-color: white; */
+    -webkit-text-stroke-color: black;
     /* opacity: 50%; */
     /* color: white; */
 }
 
 h2 {
     color: black;
+    margin-top: 10px;
 }

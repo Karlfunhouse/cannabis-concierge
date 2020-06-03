@@ -8,22 +8,32 @@ const ActivityFilter = observer( () => {
     const weedStore = useContext(WeedStoreContext);
     const location = useLocation();
    
+    const filterByActivity = (e) => {
+        const currentActivity = e.target.innerText
+        const activityObject = weedStore.activities.find(activity => activity.title === currentActivity)
+        const activityEffects = activityObject.effects
 
+        let activityStrains = weedStore.allStrains.filter(strain => {
+            return activityEffects.every((effect) => {
+                return strain.effects.positive.indexOf(effect) !== -1
+            })
+        })
+        console.log(activityStrains)
+
+    }
+    
     const activityButtons = weedStore.activities.map(activity => {
-       
         return (
-            <button className={activity.css}><span className="activity-name">{activity.title}</span></button>
+            <button onClick={filterByActivity} className={activity.css}><span className="activity-name">{activity.title}</span></button>
         )
     })
-    
-    const filterByActivity = (e) => {
-        
-    }
+
 
     return (
         <div className="activity-card-container">
             <h2>Choose Your Adventure</h2>
             {activityButtons}
+            
         </div>
     );
 })
