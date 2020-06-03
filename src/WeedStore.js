@@ -13,7 +13,7 @@ export default class WeedStore {
   noFlavorsSelected = null;
   selectedStrain = {}
   homePageCategories = ['Activity', 'Mood', 'Medicinal', 'Quiz'];
-
+  currentActivity = false;
   activities = [
     {title: 'Netflix & Chill',
       css: "netflix",
@@ -142,6 +142,11 @@ export default class WeedStore {
     }
   }
 
+  setActivityStrains = (activityStrains) => {
+    this.currentStrains = this.allStrains
+    this.currentActivity = true
+    this.currentStrains = activityStrains
+  }
 }
 
 decorate(WeedStore, {
@@ -162,7 +167,8 @@ decorate(WeedStore, {
   filterByFlavor: action,
   filteredByEffect: observable,
   updateFilterByEffect: action,
-  noFlavorsSelected: observable
-});
+  noFlavorsSelected: observable,
+  setActivityStrains: observable
+})
 
 export const WeedStoreContext = createContext(new WeedStore())
