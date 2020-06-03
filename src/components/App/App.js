@@ -9,6 +9,8 @@ import StrainCards from '../StrainCards/StrainCards.js';
 import ExpandedCard from '../ExpandedCard/ExpandedCard';
 import { WeedStoreContext } from '../../WeedStore';
 import MedicalAndEffectsFilter from '../MedicalAndEffectsFilter/MedicalAndEffectsFilter';
+import ActivityFilter from '../ActivityFilter/ActivityFilter';
+
 
 const App = observer(() => {
 
@@ -64,6 +66,7 @@ const App = observer(() => {
           component={() => (
             <div>
               <NavBar />
+              <ActivityFilter />
               <StrainCards />
             </div>
           )}
