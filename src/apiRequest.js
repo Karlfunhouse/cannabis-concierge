@@ -12,3 +12,14 @@ export const allStrainsData = async () => {
     }
 }
 
+export const strainDesc = async (id) => {
+    try {
+        let response = await fetch(`${apiLink}strains/data/desc/${id}`);
+        let data = await response.json();
+        return data;
+    }
+    catch (error) {
+        console.error(error);
+    }
+}
+

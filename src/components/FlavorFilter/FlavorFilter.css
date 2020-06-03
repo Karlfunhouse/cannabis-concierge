@@ -41,10 +41,11 @@
   /* margin-bottom: 30px; */
 }
 
-.testing:checked + label {
-  color: #ccc;
+/* .selected-radio {
+  color: black ;
   font-style: italic;
-} 
+  background-color: black;
+}  */
 
 
 
