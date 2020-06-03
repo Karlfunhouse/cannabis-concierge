@@ -8,18 +8,17 @@ const ActivityFilter = observer( () => {
     const weedStore = useContext(WeedStoreContext);
     const location = useLocation();
    
-    const filterByActivity = (e) => {
+    const filterByActivity =  (e) => {
         const currentActivity = e.target.innerText
         const activityObject = weedStore.activities.find(activity => activity.title === currentActivity)
         const activityEffects = activityObject.effects
 
-        let activityStrains = weedStore.allStrains.filter(strain => {
+        let activityStrains =  weedStore.allStrains.filter(strain => {
             return activityEffects.every((effect) => {
                 return strain.effects.positive.indexOf(effect) !== -1
             })
         })
-        console.log(activityStrains)
-
+        weedStore.setActivityStrains(activityStrains)
     }
     
     const activityButtons = weedStore.activities.map(activity => {
@@ -33,7 +32,8 @@ const ActivityFilter = observer( () => {
         <div className="activity-card-container">
             <h2>Choose Your Adventure</h2>
             {activityButtons}
-            
+            <h2>{weedStore.currentStrains.length > 0 ? `There are ${weedStore.currentStrains.length} strains to choose from!` : ''}</h2>
+
         </div>
     );
 })
