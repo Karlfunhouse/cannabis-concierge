@@ -79,9 +79,7 @@ export default class WeedStore {
 
   filterByFlavor = (e) => {
     this.resetCurrentStrains();
-    this.noFlavorsSelected = false;
-    console.log(this.noFlavorsSelected);
-    
+    this.noFlavorsSelected = false;    
     this.currentStrains = this.currentStrains.filter(strain => strain.flavors.includes(e))
   }
 
