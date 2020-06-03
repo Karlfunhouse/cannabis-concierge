@@ -9,12 +9,18 @@ export default class WeedStore {
   userInfo = '';
   filterSelectors = [];
   selectorStatus = {};
+  noFlavorsSelected = null;
   selectedStrain = {}
   homePageCategories = ['Activity', 'Mood', 'Medicinal', 'Quiz'];
   medicinal = ['Depression', 'Insomnia', 'Pain', 'Stress', 'Lack of Appetite', 'Nausea', 'Fatigue', 'Headaches', 'Eye Pressure', 'Inflammation', 'Spasticity', 'Seizures', 'Muscle Spasms'];
   mood = ['Relaxed', 'Hungry', 'Euphoric', 'Happy', 'Energetic', 'Talkative', 'Uplifted', 'Tingly', 'Sleepy', 'Focused', 'Giggly', 'Aroused'];
   negativeEffects = ['Dizzy', 'Dry Mouth', 'Paranoid', 'Dry Eyes', 'Anxious'];
-
+  flavors = ["Earthy", "Chemical", "Pine", "Spicy/Herbal", "Pungent", "Pepper", "Flowery", "Citrus", "Orange", "Sweet",
+    "Skunk", "Grape", "Minty", "Woody", "Cheese", "Diesel", "Tropical", "Grapefruit", "Nutty", "Lemon", "Berry", "Blueberry", "Ammonia",
+    "Apple", "Rose", "Butter", "Honey", "Tea", "Lime", "Lavender", "Strawberry", "Mint", "Chestnut", "Tree Fruit", "Pear", "Apricot", "Peach", "Blue Cheese", "Menthol",
+    "Coffee", "Tar", "Mango", "Pineapple", "Sage", "Vanilla", "Plum", "Tobacco", "Violet"]
+  filteredByEffect = null;
+  
   fetchData = async () => {
     let data = await allStrainsData();
     this.allData = await data;
@@ -72,6 +78,28 @@ export default class WeedStore {
     this.filterSelectors = []
   }
 
+  filterByFlavor = (e) => {
+    this.resetCurrentStrains();
+    this.noFlavorsSelected = false;    
+    this.currentStrains = this.currentStrains.filter(strain => strain.flavors.includes(e))
+  }
+
+  updateFilterByEffect = (e) => {
+    if (e === 'effect') {
+      this.filteredByEffect = true;
+      this.resetCurrentStrains();
+      this.noFlavorsSelected = null;
+    }
+    if (e === 'flavor') {
+      this.noFlavorsSelected = true;
+      this.filteredByEffect = false;
+      this.resetCurrentStrains();
+    }
+    if (e === 'Medicinal') {
+      this.noFlavorsSelected = null;
+    }
+  }
+
   setSelectedStrain = (selectedStrain) => {
     this.selectedStrain = {}
     let selectedObject = this.allStrains.find(strain => strain.name === selectedStrain)
@@ -80,21 +108,24 @@ export default class WeedStore {
 
 }
 
-decorate (
-  WeedStore, {
-    allStrains: observable,
-    currentStrains: observable,
-    userInfo: observable,
-    filterSelectors: observable,
-    getSelectorStatus: action,
-    setSelectedStrain: action,
-    fetchData: action,
-    resetDesiredEffects: action,
-    resetCurrentStrains: action,
-    getFilteredStrains: action,
-    addDeseriredEffect: action
-   }
-)
-
+decorate(WeedStore, {
+  allStrains: observable,
+  currentStrains: observable,
+  userInfo: observable,
+  filterSelectors: observable,
+  getSelectorStatus: action,
+  setSelectedStrain: action,
+  fetchData: action,
+  resetCurrentStrains: action,
+  getFilteredStrains: action,
+  addDeseriredEffect: action,
+  setStrainStatusTrue: action,
+  setStrainStatusFalse: action,
+  resetDesiredEffects: action,
+  filterByFlavor: action,
+  filteredByEffect: observable,
+  updateFilterByEffect: action,
+  noFlavorsSelected: observable
+});
 
 export const WeedStoreContext = createContext(new WeedStore())

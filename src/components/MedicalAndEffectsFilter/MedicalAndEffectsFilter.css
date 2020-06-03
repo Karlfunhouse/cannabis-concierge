@@ -26,3 +26,27 @@
 .med-input {
   margin-top: 5px;
 }
+
+.filter-title input {
+  opacity: 0;
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+	height: 1px;
+	width: 1px;
+	border: 0;
+	overflow: hidden;
+}
+
+.filter-title label {
+  box-shadow: 2px 2px #00000022;
+  cursor: pointer;
+  background-color: #F4F4F6;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 0 10px;
+}
+
+.selected-topic {
+  color: #F4F4F6;
+  background-color: #07B35A  !important;
+}
