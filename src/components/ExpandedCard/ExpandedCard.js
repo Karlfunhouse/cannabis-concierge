@@ -24,7 +24,7 @@ const ExpandedCard = observer(() => {
         <p className="strain-type-tag">{weedStore.selectedStrain.race}</p>
         <img
           src={weedStore.selectedStrain.img}
-          alt="cannabis image"
+          alt="cannabis icon"
           className="cannabis-img"
         />
         <p className="strain-details">
