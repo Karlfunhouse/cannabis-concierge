@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Login from './Login';
-// import { jest } from '@jest/globals'
 import { render, waitFor, fireEvent } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 
@@ -30,19 +29,6 @@ describe('<Login />', () => {
     fireEvent.change(nameInput, {target: {value: 'Justin'}})
     fireEvent.click(over21Btn)
     expect(nameInput.value).toBe('Justin')
-  })
-
-  it('Should alert the user is missing a name', async () => {
-    const { getByPlaceholderText, getByText } = render(<BrowserRouter> <Login /> </BrowserRouter>);
-    const nameInput = getByPlaceholderText('username');
-    const over21Btn = getByText('I\'m 21+');
-    // const spy = jest.spyOn(over21Btn, 'errorMessage')
-
-    fireEvent.change(nameInput, {target: {value: ''}})
-    fireEvent.click(over21Btn)
-
-
-    await waitFor (() => expect(getByText('Please enter your username')).toBeInTheDocument())
   })
 
 })

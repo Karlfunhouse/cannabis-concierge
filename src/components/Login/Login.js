@@ -9,7 +9,6 @@ const Login = () => {
   const [alertClass, addAlertClass] = useState('hide')
   const changeHandler = (e) => {
     weedStore.userInfo = e.target.value;
-    console.log(weedStore.userInfo);
   }
 
   const errorMessage = (e) => {
