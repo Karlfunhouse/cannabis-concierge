@@ -16,18 +16,24 @@ Cannabis has many medicinal properties as well, and we wanted to highlight this 
 ### User Interaction
 Login Page (Must be 21+ to enter)
 ![login page](public/assets/screenshots/login-page.png)
+![login gif](public/assets/screenshots/login-gif.gif)
 Welcome Page
 ![welcome page](public/assets/screenshots/welcome-page.png)
 Activities Page
 ![activities page](public/assets/screenshots/activity-page.png)
+![activities gif](public/assets/screenshots/activity.gif)
 Effects Page
 ![effects page](public/assets/screenshots/effects-page.png)
+![effects gif](public/assets/screenshots/effects.gif)
 Flavors Page
 ![flavors page](public/assets/screenshots/flavors-page.png)
+![flavors gif](public/assets/screenshots/flavor.gif)
 Medicinal Page
 ![medicinal page](public/assets/screenshots/medical-page.png)
+![medicinal gif](public/assets/screenshots/medicinal.gif)
 Strain Profile Card
 ![strain view](public/assets/screenshots/strain-page.png)
+![strain gif](public/assets/screenshots/strain-favorite.gif)
 Favorited Strain
 ![favorited strain](public/assets/screenshots/favorite.png)
 
