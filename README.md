@@ -58,7 +58,7 @@ Login Page (Must be 21+ to enter)
 - Create React App
 - JavaScript
 - CSS
-- Fetch API
+- Fetch API (http://strains.evanbusse.com/)
 - Jest
 - React Testing Library
 
