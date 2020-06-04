@@ -39,11 +39,17 @@ Login Page (Must be 21+ to enter)
 ![favorited strain](/screenshots/favorite.png)
 
 ## GIFs
+#### Login
 ![login gif](/screenshots/login-gif.gif)
+####  Activity
 ![activities gif](/screenshots/activity.gif)
+#### Effects
 ![effects gif](/screenshots/effects.gif)
+#### Flavors
 ![flavors gif](/screenshots/flavor.gif)
+#### Medicinal
 ![medicinal gif](/screenshots/medicinal.gif)
+#### Strain Card & Favoriting Strain
 ![strain gif](/screenshots/strain-favorite.gif)
 
 ### Technologies Used:
