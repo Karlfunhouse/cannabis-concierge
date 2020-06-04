@@ -23,7 +23,7 @@ Activities Page
 ![activities page](/screenshots/activity-page.png)
 ![activities gif](/screenshots/activity.gif)
 Effects Page
-![effects page](/screenshots/effects-page.png)
+![effects page](/screenshots/effect-page.png)
 ![effects gif](/screenshots/effects.gif)
 Flavors Page
 ![flavors page](/screenshots/flavors-page.png)
