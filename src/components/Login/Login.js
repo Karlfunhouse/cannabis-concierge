@@ -7,12 +7,11 @@ const Login = () => {
   const weedStore = useContext(WeedStoreContext);
   const [errorMsg, addError] = useState('')
   const [alertClass, addAlertClass] = useState('hide')
-  
+
   const changeHandler = (e) => {
-    weedStore.updateLoginName(e.target.value);
-    console.log(weedStore.userInfo);
+    weedStore.userInfo = e.target.value;
   }
-  
+
   const saveToStorage = () => {
     let name =  weedStore.userInfo
     localStorage.setItem("userName", name);

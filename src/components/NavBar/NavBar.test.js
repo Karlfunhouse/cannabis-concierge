@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import NavBar from './NavBar';
-// import { jest } from '@jest/globals'
+import '@testing-library/jest-dom/extend-expect'
 import { render, waitFor, fireEvent } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import '@testing-library/jest-dom';
@@ -31,17 +31,5 @@ describe('<NavBar />', () => {
 
     expect(getByText('Logout')).toBeInTheDocument();
   })
-
-  // tried to test that the favs button was clicked one time, but did not work as I expected it to, left to show how I tried:
-
-  // it('Should be able to click the favorites button', () => {
-  //   const { getByPlaceholderText, getByText } = render(<BrowserRouter> <NavBar /> </BrowserRouter>);
-  //   const mockViewFavs = jest.fn();
-  //   const favoriteBtn = getByText('Favorites - 0');
-  //
-  //   fireEvent.click(favoriteBtn)
-  //   expect(mockViewFavs).toHaveBeenCalledTimes(1);
-  //
-  // })
 
 })
