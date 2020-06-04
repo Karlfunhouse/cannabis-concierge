@@ -1,68 +1,68 @@
+# Cannabis Concierge 
+
+### Abstract
+Cannabis Concierge is an app that helps users navigate the wide world of cannabis.  With so many varieties of cannabis available these days, it can be hard to branch out and explore new strains without really knowing what you're going to get.  
+
+Cannabis Concierge allows a user to explore strains find their new favorite strains based on their desired set and setting.  
+
+**Recreational Use:**
+In the activity menu, a user can select from 6 activities and be given a listing of strains that are perfect for that activity.
+
+If the user is looking for a specific feeling, the Mood menu allows users to filter through 12 different effects to find their flower.  We also allow users to search for strains based on desired flavor profiles.  No matter the vibe, we will help you find your high.  
+
+**Medical Use:**
+Cannabis has many medicinal properties as well, and we wanted to highlight this widespread use of cannabis for our users.  Navigating to the Medicinal menu option will allow users to select their symptoms and be given a customized selection of medicinal strains.  Just what the doctor ordered.
+
+### User Interaction
+Login Page (Must be 21+ to enter)
+![login page](public/assets/screenshots/login-page.png)
+Welcome Page
+![welcome page](public/assets/screenshots/welcome-page.png)
+Activities Page
+![activities page](public/assets/screenshots/activity-page.png)
+Effects Page
+![effects page](public/assets/screenshots/effects-page.png)
+Flavors Page
+![flavors page](public/assets/screenshots/flavors-page.png)
+Medicinal Page
+![medicinal page](public/assets/screenshots/medical-page.png)
+Strain Profile Card
+![strain view](public/assets/screenshots/strain-page.png)
+Favorited Strain
+![favorited strain](public/assets/screenshots/favorite.png)
+
+
+### Technologies Used:
+- MobX (Stretch Technology Implemented)
+- React
+- Create React App
+- JavaScript
+- CSS
+- Fetch API
+- Jest
+- React Testing Library
+
+### Learning Goals:
+- Teach ourselves a global state management(GSM) technology and implement it (MobX)
+- Build an App that is the answer to the question: "How do I decide which kind of cannabis I should try?"
+- Expand understanding of React while also implementing GSM
+- Write tests for React components and some asynchronous functionality
+
+### Install:
+1. Clone this repo
+1. Run `npm install` to get dependencies
+1. Run `npm start' to start the webserver
+1. Open `localhost:3000` in your favorite browser
+
+### Future Iterations:
+- Implement Favorites Menu that displays a user's favorited strains
+- Add a Quiz that will allow users to answer questions and be given a suggestion for a strain they should try.
+
+### Contributors:
+- [Ally Jarjour](https://github.com/allyjarjour)
+- [Justin Corbin](https://github.com/Corbinj22)
+- [Karl Nielsen](https://github.com/karlfunhouse)
+- [Léah Winters](https://github.com/LeahWinters)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
