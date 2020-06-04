@@ -46,7 +46,7 @@ const App = observer(() => {
         <Route
           path="/medicinal"
           component={() => (
-            <div>
+            <div className="home-page">
               <NavBar />
               <MedicalAndEffectsFilter />
               <StrainCards />
@@ -56,7 +56,7 @@ const App = observer(() => {
         <Route
           path="/mood"
           component={() => (
-            <div>
+            <div className="home-page">
               <NavBar />
               <MedicalAndEffectsFilter />
               <StrainCards />
@@ -66,7 +66,7 @@ const App = observer(() => {
         <Route
           path="/activity"
           component={() => (
-            <div>
+            <div className="home-page">
               <NavBar />
               <ActivityFilter />
               <StrainCards />

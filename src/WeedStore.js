@@ -12,7 +12,7 @@ export default class WeedStore {
   selectorStatus = {};
   noFlavorsSelected = null;
   selectedStrain = {}
-  homePageCategories = ['Activity', 'Mood', 'Medicinal', 'Quiz'];
+  homePageCategories = ['Activity', 'Mood', 'Medicinal'];
   currentActivity = false;
   activities = [
     {title: 'Netflix & Chill',
