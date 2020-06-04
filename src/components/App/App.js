@@ -18,8 +18,10 @@ const App = observer(() => {
 
   useEffect(() => {
     weedStore.fetchData();
-    console.log(weedStore.userInfo);
-  }, [])
+    // weedStore.updateLoginName()
+    console.log(weedStore.currentStrain);
+    weedStore.populateDataFromLS();
+  }, [weedStore])
 
   return (
     <div className="App">
@@ -44,7 +46,7 @@ const App = observer(() => {
         <Route
           path="/medicinal"
           component={() => (
-            <div>
+            <div className="home-page">
               <NavBar />
               <MedicalAndEffectsFilter />
               <StrainCards />
@@ -54,7 +56,7 @@ const App = observer(() => {
         <Route
           path="/mood"
           component={() => (
-            <div>
+            <div className="home-page">
               <NavBar />
               <MedicalAndEffectsFilter />
               <StrainCards />
@@ -64,7 +66,7 @@ const App = observer(() => {
         <Route
           path="/activity"
           component={() => (
-            <div>
+            <div className="home-page">
               <NavBar />
               <ActivityFilter />
               <StrainCards />

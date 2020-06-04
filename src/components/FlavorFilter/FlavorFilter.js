@@ -8,15 +8,16 @@ const FlavorFilter = () => {
    const selectionMenu = weedStore.flavors.map((flavor) => (
      <div key={flavor} className="flavor-input">
        <label htmlFor={flavor} >
+         {flavor}
+       </label>
          <input
+           className="flavor-radio"
            type="radio"
            id={flavor}
            value={flavor}
            name="flavor"
            onClick={(e) => weedStore.filterByFlavor(e.target.value)}
          />
-         {flavor}
-       </label>
      </div>
    ));
     return (

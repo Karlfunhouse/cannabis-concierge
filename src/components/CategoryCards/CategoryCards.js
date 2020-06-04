@@ -22,6 +22,12 @@ const CategoryCards = () => {
   return (
     <section className="category-cards">
       {displayCards}
+      <div className='towlie'>
+        <img
+        src="/assets/towelie-welcome.png"
+        alt="South Park's Towelie dressed as a wizard"
+      /> 
+      </div>
     </section>
   );
 }

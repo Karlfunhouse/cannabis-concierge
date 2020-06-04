@@ -88,6 +88,9 @@ span.activity-name {
 }
 
 h2 {
-    color: black;
+    font-size: 2em;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
     margin-top: 10px;
 }
