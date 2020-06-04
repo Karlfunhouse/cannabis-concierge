@@ -75,8 +75,10 @@ Login Page (Must be 21+ to enter)
 1. Open `localhost:3000` in your favorite browser
 
 ### Future Iterations:
-- Implement Favorites Menu that displays a user's favorited strains
+- Implement Favorites Menu that displays a user's favorited strains.
 - Add a Quiz that will allow users to answer questions and be given a suggestion for a strain they should try.
+- Make APP responsive for Mobile.
+- Dispensary integration to locate where strains are available.
 
 ### Contributors:
 - [Ally Jarjour](https://github.com/allyjarjour)
