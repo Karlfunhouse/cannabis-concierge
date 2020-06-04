@@ -76,9 +76,11 @@ Login Page (Must be 21+ to enter)
 
 ### Future Iterations:
 - Implement Favorites Menu that displays a user's favorited strains.
+- Add Search functionality to find strains by name.
 - Add a Quiz that will allow users to answer questions and be given a suggestion for a strain they should try.
 - Make APP responsive for Mobile.
 - Dispensary integration to locate where strains are available.
+
 
 ### Contributors:
 - [Ally Jarjour](https://github.com/allyjarjour)
