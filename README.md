@@ -13,34 +13,42 @@ If the user is looking for a specific feeling, the Mood menu allows users to fil
 **Medical Use:**
 Cannabis has many medicinal properties as well, and we wanted to highlight this widespread use of cannabis for our users.  Navigating to the Medicinal menu option will allow users to select their symptoms and be given a customized selection of medicinal strains.  Just what the doctor ordered.
 
-### User Interaction
+### Screenshots
 Login Page (Must be 21+ to enter)
 ![login page](/screenshots/login-page.png)
-![login gif](/screenshots/login-gif.gif)
-Welcome Page
+
+#### Welcome Page
 ![welcome page](/screenshots/welcome-page.png)
-Activities Page
+
+#### Activities Page
 ![activities page](/screenshots/activity-page.png)
-![activities gif](/screenshots/activity.gif)
-Effects Page
+
+#### Effects Page
 ![effects page](/screenshots/effect-page.png)
-![effects gif](/screenshots/effects.gif)
-Flavors Page
+
+#### Flavors Page
 ![flavors page](/screenshots/flavors-page.png)
-![flavors gif](/screenshots/flavor.gif)
-Medicinal Page
+
+#### Medicinal Page
 ![medicinal page](/screenshots/medical-page.png)
-![medicinal gif](/screenshots/medicinal.gif)
-Strain Profile Card
+
+#### Strain Profile Card
 ![strain view](/screenshots/strain-page.png)
-![strain gif](/screenshots/strain-favorite.gif)
-Favorited Strain
+
+#### Favorited Strain
 ![favorited strain](/screenshots/favorite.png)
 
+## GIFs
+![login gif](/screenshots/login-gif.gif)
+![activities gif](/screenshots/activity.gif)
+![effects gif](/screenshots/effects.gif)
+![flavors gif](/screenshots/flavor.gif)
+![medicinal gif](/screenshots/medicinal.gif)
+![strain gif](/screenshots/strain-favorite.gif)
 
 ### Technologies Used:
 - MobX (Stretch Technology Implemented)
-- React
+- React Hooks
 - Create React App
 - JavaScript
 - CSS
